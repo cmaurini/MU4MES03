@@ -1,12 +1,13 @@
-name: qe-mini-example
+name: mu4mes03
 channels:
-  - default
+  - conda-forge
 dependencies:
   - python=3.8
   - sphinx
   - pip
   - pandas
   - matplotlib
-  - pip:
-    - quantecon
-    - jupyter-book
+  - jupyter-book
+  - scipy
+  - sympy
+  - fenics-dolfinx

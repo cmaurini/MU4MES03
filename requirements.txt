@@ -3,3 +3,7 @@ pandas
 matplotlib
 quantecon
 jupyter-book
+seaborn
+scipy
+sympy
+fenics-dolfinx
