@@ -2,7 +2,7 @@
 
 We collect here the course material for the class MU4MES03 Slender Structures - Beams at Sorbonne University
 
-## Creating an Conda Environment
+## Creating the conda environment
 
 The conda environment is provided as `environment.yml`. This environment is used for all testing by Github Actions and can be setup by:
 
