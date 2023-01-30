@@ -9,53 +9,51 @@
     <title>An Introductory Example &#8212; MU4MES03 - Slender structures - beams</title>
     
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Learn More" href="learn_more.html" />
-    <link rel="prev" title="From beams to frames" href="01/Beam.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -90,54 +88,27 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="bd-sidebar noprint" id="site-navigation">
     <div class="bd-sidebar__content">
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+    <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="../_static/logo-SU.jpeg" class="logo" alt="logo">
+      <img src="../../_static/logo-SU.jpeg" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">MU4MES03 - Slender structures - beams</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="about_py.html">
-   Linear beams
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="getting_started.html">
-     Setting up Your Python Environment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="01/Beam.html">
-     From beams to frames
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   An Introductory Example
-  </a>
- </li>
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="learn_more.html">
-   Learn More
+  <a class="reference internal" href="../01/Beam.html">
+   From beams to frames
   </a>
  </li>
 </ul>
@@ -199,7 +170,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/quantecon-mini-example/master?urlpath=tree/mini_book/chapters/python_by_example.md"
+        <a href="https://mybinder.org/v2/gh/executablebooks/quantecon-mini-example/master?urlpath=tree/mini_book/chapters/00/python_by_example.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -209,7 +180,7 @@ title="Launch on Binder"
 
 <span class="headerbtn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img src="../../_static/images/logo_binder.svg">
   </span>
 <span class="headerbtn__text-container">Binder</span>
 </a>
@@ -242,7 +213,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/chapters/python_by_example.ipynb"
+        <a href="../../_sources/chapters/00/python_by_example.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -259,7 +230,7 @@ title="Download notebook file"
       </li>
       
       <li>
-        <a href="../_sources/chapters/python_by_example.md"
+        <a href="../../_sources/chapters/00/python_by_example.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -667,7 +638,7 @@ structures.</p>
 <p>In other words, we want to generate figures that look something like
 this:</p>
 <figure class="align-default">
-<img alt="../_images/test_program_1_updated.png" src="../_images/test_program_1_updated.png" />
+<img alt="../../_images/test_program_1_updated.png" src="../../_images/test_program_1_updated.png" />
 </figure>
 <p>(Here <span class="math notranslate nohighlight">\(t\)</span> is on the horizontal axis and <span class="math notranslate nohighlight">\(\epsilon_t\)</span> is on the vertical
 axis.)</p>
@@ -698,7 +669,7 @@ in the notebook if you run it on your own machine.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/python_by_example_3_0.png" src="../_images/python_by_example_3_0.png" />
+<img alt="../../_images/python_by_example_3_0.png" src="../../_images/python_by_example_3_0.png" />
 </div>
 </div>
 <p>Let’s break this program down and see how it works.</p>
@@ -846,7 +817,7 @@ lines after the import statements are</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/python_by_example_14_0.png" src="../_images/python_by_example_14_0.png" />
+<img alt="../../_images/python_by_example_14_0.png" src="../../_images/python_by_example_14_0.png" />
 </div>
 </div>
 <p>The first line generates 100 (quasi) independent standard normals and
@@ -883,7 +854,7 @@ semantics in a familiar setting.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/python_by_example_16_0.png" src="../_images/python_by_example_16_0.png" />
+<img alt="../../_images/python_by_example_16_0.png" src="../../_images/python_by_example_16_0.png" />
 </div>
 </div>
 <p>In brief,</p>
@@ -1130,7 +1101,7 @@ a <code class="docutils literal notranslate"><span class="pre">while</span></cod
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/python_by_example_34_0.png" src="../_images/python_by_example_34_0.png" />
+<img alt="../../_images/python_by_example_34_0.png" src="../../_images/python_by_example_34_0.png" />
 </div>
 </div>
 <p>Note that</p>
@@ -1149,9 +1120,9 @@ denoted by <span class="math notranslate nohighlight">\(T\)</span>.</p>
 <p>The initial balance is <span class="math notranslate nohighlight">\(b_0\)</span> and the interest rate is <span class="math notranslate nohighlight">\(r\)</span>.</p>
 <p>The balance updates from period <span class="math notranslate nohighlight">\(t\)</span> to <span class="math notranslate nohighlight">\(t+1\)</span> according to</p>
 <div class="math notranslate nohighlight" id="equation-ilom">
-<span class="eqno">(1)<a class="headerlink" href="#equation-ilom" title="Permalink to this equation">#</a></span>\[    b_{t+1} = (1 + r) b_t\]</div>
+<span class="eqno">()<a class="headerlink" href="#equation-ilom" title="Permalink to this equation">#</a></span>\[    b_{t+1} = (1 + r) b_t\]</div>
 <p>In the code below, we generate and plot the sequence <span class="math notranslate nohighlight">\(b_0, b_1, \ldots, b_T\)</span>
-generated by <a class="reference internal" href="#equation-ilom">(1)</a>.</p>
+generated by <a class="reference internal" href="#equation-ilom">()</a>.</p>
 <p>Instead of using a Python list to store this sequence, we will use a
 NumPy array.</p>
 <div class="cell docutils container">
@@ -1171,7 +1142,7 @@ NumPy array.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/python_by_example_36_0.png" src="../_images/python_by_example_36_0.png" />
+<img alt="../../_images/python_by_example_36_0.png" src="../../_images/python_by_example_36_0.png" />
 </div>
 </div>
 <p>The statement <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">np.empty(T+1)</span></code> allocates storage in memory for <code class="docutils literal notranslate"><span class="pre">T+1</span></code>
@@ -1323,7 +1294,7 @@ landing in <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/python_by_example_45_0.png" src="../_images/python_by_example_45_0.png" />
+<img alt="../../_images/python_by_example_45_0.png" src="../../_images/python_by_example_45_0.png" />
 </div>
 </div>
 </section>
@@ -1347,7 +1318,7 @@ landing in <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/python_by_example_47_0.png" src="../_images/python_by_example_47_0.png" />
+<img alt="../../_images/python_by_example_47_0.png" src="../../_images/python_by_example_47_0.png" />
 </div>
 </div>
 </section>
@@ -1370,7 +1341,7 @@ landing in <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/python_by_example_49_0.png" src="../_images/python_by_example_49_0.png" />
+<img alt="../../_images/python_by_example_49_0.png" src="../../_images/python_by_example_49_0.png" />
 </div>
 </div>
 </section>
@@ -1397,7 +1368,7 @@ landing in <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/python_by_example_51_0.png" src="../_images/python_by_example_51_0.png" />
+<img alt="../../_images/python_by_example_51_0.png" src="../../_images/python_by_example_51_0.png" />
 </div>
 </div>
 <p>Here’s a shorter way to write the same thing:</p>
@@ -1418,7 +1389,7 @@ landing in <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/python_by_example_53_0.png" src="../_images/python_by_example_53_0.png" />
+<img alt="../../_images/python_by_example_53_0.png" src="../../_images/python_by_example_53_0.png" />
 </div>
 </div>
 </section>
@@ -1451,7 +1422,7 @@ fraction that falls into the circle.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14392
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14304
 </pre></div>
 </div>
 </div>
@@ -1473,7 +1444,7 @@ fraction that falls into the circle.</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapters"
+            path: "./chapters/00"
         },
         predefinedOutput: true
     }
@@ -1487,20 +1458,6 @@ fraction that falls into the circle.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="01/Beam.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">From beams to frames</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="learn_more.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Learn More</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
@@ -1522,7 +1479,7 @@ fraction that falls into the circle.</p>
     </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
 
   </body>

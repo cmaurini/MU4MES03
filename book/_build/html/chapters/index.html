@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Scientific Python QuickStart &#8212; MU4MES03 - Slender structures - beams</title>
+    <title>Syllabus &#8212; MU4MES03 - Slender structures - beams</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="About Python" href="about_py.html" />
+    <link rel="next" title="From beams to frames" href="01/Beam.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -105,36 +105,9 @@ const thebe_selector_output = ".output, .cell_output"
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="about_py.html">
-   Linear beams
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="getting_started.html">
-     Setting up Your Python Environment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="01/Beam.html">
-     From beams to frames
-    </a>
-   </li>
-  </ul>
- </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="python_by_example.html">
-   An Introductory Example
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="learn_more.html">
-   Learn More
+  <a class="reference internal" href="01/Beam.html">
+   From beams to frames
   </a>
  </li>
 </ul>
@@ -247,23 +220,60 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-1-linear-beams">
+   Chapter 1: linear beams
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Scientific Python QuickStart</h1>
+                <h1>Syllabus</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-1-linear-beams">
+   Chapter 1: linear beams
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -271,28 +281,16 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="scientific-python-quickstart">
-<h1>Scientific Python QuickStart<a class="headerlink" href="#scientific-python-quickstart" title="Permalink to this headline">#</a></h1>
-<p>This is a short sequence of lectures on Python programming for scientific
-work, written by <a class="reference external" href="http://www.tomsargent.com/">Thomas J.  Sargent</a> and <a class="reference external" href="https://johnstachurski.net/">John
-Stachurski</a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>These lectures were built using the new Sphinx-based <a class="reference external" href="https://beta.jupyterbook.org/intro.html">Jupyter Book
-2.0</a> tool set, as part of the
-<a class="reference external" href="https://ebp.jupyterbook.org/en/latest/">ExecutableBookProject</a>.  They are
-intended mainly as a demonstration of these tools.
-Instructions for how to build them from source can be found in the Jupyter
-Book documentation.</p>
-</div>
-<p>These lectures are a mini-version of a <a class="reference external" href="https://executablebooks.github.io/quantecon-example/docs/index.html">longer
-series</a>
-of lectures, also built using Jupyter Book 2.0.  That series contains more
-features and applications but also requires more libraries and takes longer to
-run.</p>
-<p>Both lecture series are taken from a <a class="reference external" href="https://python.quantecon.org">more complete set of
-lectures</a> on open source computing hosted by
-<a class="reference external" href="https://quantecon.org">QuantEcon</a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="syllabus">
+<h1>Syllabus<a class="headerlink" href="#syllabus" title="Permalink to this headline">#</a></h1>
+<section id="chapter-1-linear-beams">
+<h2>Chapter 1: linear beams<a class="headerlink" href="#chapter-1-linear-beams" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Review of linear beam models</p></li>
+<li><p>Variational approaches</p></li>
+<li><p>Frame models</p></li>
+</ul>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -324,10 +322,10 @@ lectures</a> on open source computing hosted by
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="about_py.html" title="next page">
+    <a class='right-next' id="next-link" href="01/Beam.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">About Python</p>
+        <p class="prev-next-title">From beams to frames</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

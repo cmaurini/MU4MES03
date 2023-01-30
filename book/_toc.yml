@@ -1,10 +1,6 @@
 format: jb-article
 root: chapters/index
-sections:
-- file: chapters/about_py
-  title: Linear beams
-  sections:
-  - file: chapters/getting_started
-  - file: chapters/01/Beam.ipynb
-- file: chapters/python_by_example
-- file: chapters/learn_more
+sections: 
+- file: chapters/syllabus.md
+- file: chapters/01/linear_beams.md
+- file: chapters/01/Beam.ipynb

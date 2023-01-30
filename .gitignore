@@ -1,4 +1,4 @@
-mini_book/_build/*
+book/_build/*
 .ipynb_checkpoints
 .DS_Store
 __pycache__/
