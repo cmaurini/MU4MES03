@@ -9,4 +9,4 @@ Try now to build your own frame.
     - Compare qualitatively with the deformed configuration plot obtained with your code
 
 We ask you to submit on (moodle)[https://moodle-sciences-22.sorbonne-universite.fr/mod/assign/view.php?id=138567] 
-a pdf print of the notebook including the points above. Name your file as **group_X_frame.pdf**
+a pdf print of the notebook including the points above. Name your file as **DM_frame_groupe_Y.pdf**
