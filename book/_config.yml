@@ -11,7 +11,10 @@ execute:
 
 # HTML-specific settings
 html:
-  home_page_in_navbar         : false
+  home_page_in_navbar         : True  
+  use_issues_button: true
+  use_repository_button: true
+  use_edit_page_button: true
 
 # Interact link settings
 notebook_interface            : "notebook"
@@ -24,6 +27,7 @@ repository:
 binder:
   binderhub_url               : "https://mybinder.org"
   text                        : "Launch binder"
+
 parse:
   myst_enable_extensions:
     - "amsmath"
