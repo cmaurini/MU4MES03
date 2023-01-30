@@ -2,7 +2,8 @@
 
 This book is a supplementary material to the class *MU4MES04: Structures élancées* at Sorbonne University.
 
-Further material is available on (moodle page)[https://moodle-sciences-22.sorbonne-universite.fr/course/view.php?id=4401] of the class.
+Further material is available on moodle page of the class:
+- https://moodle-sciences-22.sorbonne-universite.fr/course/view.php?id=4401
 
 ## Creating a conda environment
 
