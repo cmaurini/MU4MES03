@@ -323,8 +323,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-a-conda-environment">
-   Creating a conda environment
+  <a class="reference internal nav-link" href="#running-the-notebooks">
+   Running the notebooks
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -352,8 +352,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-a-conda-environment">
-   Creating a conda environment
+  <a class="reference internal nav-link" href="#running-the-notebooks">
+   Running the notebooks
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -378,10 +378,11 @@ title="Print to PDF"
 <ul class="simple">
 <li><p><a class="reference external" href="https://moodle-sciences-22.sorbonne-universite.fr/course/view.php?id=4401">https://moodle-sciences-22.sorbonne-universite.fr/course/view.php?id=4401</a></p></li>
 </ul>
-<section id="creating-a-conda-environment">
-<h2>Creating a conda environment<a class="headerlink" href="#creating-a-conda-environment" title="Permalink to this headline">#</a></h2>
-<p>The conda environment is provided as <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>. This environment is used to run the notebooks. You can install the dependencies and load the environment easily using <code class="docutils literal notranslate"><span class="pre">conda</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span>
+<section id="running-the-notebooks">
+<h2>Running the notebooks<a class="headerlink" href="#running-the-notebooks" title="Permalink to this headline">#</a></h2>
+<p>To run the notebooks on your computer you need to have a working installation of numpy, scipy, and other basic python tools.</p>
+<p>The conda environment (list of dependencies) is provided in the file <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>. You can install the dependencies and load the environment easily using <code class="docutils literal notranslate"><span class="pre">conda</span></code> as follows.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">cmaurini</span><span class="o">/</span><span class="n">MU4MES03</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">environment</span><span class="o">.</span><span class="n">yml</span>
 <span class="n">conda</span> <span class="n">activate</span> <span class="n">mu4mes03</span>
 </pre></div>
 </div>
