@@ -48,3 +48,6 @@ latex:
   latex_engine                : "xelatex"
   latex_documents:
     targetname: book.tex
+
+# to build and deploy
+# jupyter-book build book && ghp-import -n -p -f book/_build/html
