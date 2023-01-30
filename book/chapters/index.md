@@ -5,12 +5,14 @@ This book is a supplementary material to the class *MU4MES04: Structures √©lanc√
 Further material is available on moodle page of the class:
 - https://moodle-sciences-22.sorbonne-universite.fr/course/view.php?id=4401
 
-## Creating a conda environment
+## Running the notebooks
 
-The conda environment is provided as `environment.yml`. This environment is used to run the notebooks. You can install the dependencies and load the environment easily using `conda`.
+To run the notebooks on your computer you need to have a working installation of numpy, scipy, and other basic python tools. 
+
+The conda environment (list of dependencies) is provided in the file `environment.yml`. You can install the dependencies and load the environment easily using `conda` as follows.
 
 ```
-conda env create -f environment.yml
+conda env create -f https://raw.githubusercontent.com/cmaurini/MU4MES03/master/environment.yml
 conda activate mu4mes03
 ```
 
