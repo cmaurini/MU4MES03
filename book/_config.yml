@@ -1,10 +1,10 @@
-title : MU4MES03 - Slender structures - beams
+title : MU4MES03
 author: Corrado Maurini
 logo: 'logo-SU.jpeg'
 
 # Short description about the book
 description: >-
-  A brief introduction to Python programming for scientific applications.
+  Supporting material for the slender structure class at Sorbonne Université.
 
 execute:
   execute_notebooks           : cache
@@ -18,12 +18,24 @@ notebook_interface            : "notebook"
 
 # Launch button settings
 repository:
-  url                         : https://github.com/executablebooks/quantecon-mini-example
-  path_to_book                : "mini_book"
+  url                         : https://github.com/cmaurini/MU4MES03/
+  path_to_book                : "book"
 
 binder:
   binderhub_url               : "https://mybinder.org"
   text                        : "Launch binder"
+parse:
+  myst_enable_extensions:
+    - "amsmath"
+    - "colon_fence"
+    - "deflist"
+    - "dollarmath"
+    - "html_admonition"
+    - "html_image"
+    - "linkify"
+    - "replacements"
+    - "smartquotes"
+    - "substitution"
 
 # LaTeX settings
 bibtex_bibfiles:

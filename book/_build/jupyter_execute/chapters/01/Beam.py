@@ -3,11 +3,13 @@
 
 # # From beams to frames 
 # 
-# This notebooks introduce a simple method for frame modelling.
+# This notebook introduces a simple python code for frame modelling.
+# 
 # Objectives:
 #  - Solve the linear beam differential equations using sympy
-#  -
-#  
+#  - Compute the beam element stiffness matrix
+#  - Assemble the element matrix to form a frame
+#  - Solve a frame problem and visualize the result
 
 # Import statements : we use sympy and matplotlib
 
@@ -17,16 +19,18 @@
 from sympy import (Function, Symbol, Derivative, Eq, symbols, simplify, integrate, Matrix, Array, latex,
                    dsolve, sin, cos, collect, tensorcontraction,tensorproduct, derive_by_array)
 import matplotlib.pyplot as plt
+import numpy as np
+import sympy
 
 
 # ## Elemental beam problem
 # 
 # We start by solving the elemental beam problem. It consists of a clamped-clamped straight beam where we apply the displacement and rotations at the two ends. 
 # We denote by $\underline t$ and $\underline n$ the beam tangent and normal director, $L$ the beam length, $EI$ and $ES$ the bending and extensional stiffness. We assume an unsherable extensible Navier-Bernoulli model and that the beam. We decompose the displacement and rotation as follows:
-# $$
+# \begin{equation*}
 # \underline{u}(s)=u(s)\underline t+v(s)\underline n,\qquad 
 # \underline{\theta}(s)=\theta(s)\,\underline b,\qquad\underline {b}:=\underline t\times\underline n
-# $$
+# \end{equation*}
 # We introduce below the notation and the expression of the potential energy using `sympy`
 
 # In[2]:
@@ -44,13 +48,13 @@ total_energy
 
 # In the absence of distributed loading the governing equations are as follows (they can by found by imposing the stationarity of the potential energy)
 # - Extension
-# $$
+# \begin{equation*}
 # u''(s)=0\quad\forall  s\in(0,L),\qquad u(0)=u_0,\qquad u(L)=u_L
-# $$
+# \end{equation*}
 # - Bending 
-# $$
+# \begin{equation*}
 # v''''(s)=0\quad\forall  s\in(0,L),\qquad v(0)=v_0,\;v'(0)=\theta_0,\; v(L)=v_L,\; v'(L)=\theta_L
-# $$
+# \end{equation*}
 
 # ### Extension
 # We solve below the extensional problem using `sympy`
@@ -80,31 +84,55 @@ vsol = dsolve(eq,ics={v(0): v0,
 vsol
 
 
-# ### Potential energy and elemental stiffness matrix
-# Hence, we can compute the potential energy of the system in terms of the imposed end-displacement and end-rotation in terms of an elemental stiffness matrix $\underline{\underline{K}}$ as 
-# $$
-# E_p(\underline U)=\dfrac{1}{2}(\underline{\underline K}.\underline{U}).\underline{U}
-# $$
-# where $\underline{U}$ is the vector collecting the imposed displacement and rotation
+# ## Plot of the deformed shape
+
+# Let as define the vector $\underline{U}_e$ is the vector collecting the imposed displacement and rotation
 
 # In[5]:
 
 
 Ue = Array((u0,v0,theta0,uL,vL,thetaL))
-Ue
 
+
+# We can plot the deformed shape for given values of $U_e$. 
+# You can modify the values to get the different shapes.
+
+# In[6]:
+
+
+import sympy
+Ue_values = np.array([0,1,0,0,0,0])
+pl = sympy.plot_parametric(s + usol.rhs.subs({u0:Ue_values[0],
+                                              uL:Ue_values[3],
+                                              L:1}),
+                           vsol.rhs.subs({v0:Ue_values[1], 
+                                          vL:Ue_values[4], 
+                                          theta0:Ue_values[2], 
+                                          thetaL:Ue_values[5],
+                                          L:1}),
+                           (s,0,1),
+                           xlabel="x",
+                           ylabel="y",
+                           title=f"Deformed shape for $U_e=${Ue_values}")
+
+
+# ### Potential energy and elemental stiffness matrix
+# Hence, we can compute the potential energy of the system in terms of the imposed end-displacement and end-rotation in terms of an elemental stiffness matrix $\underline{\underline{K}}_e$ as 
+# \begin{equation*}
+# E_p(\underline U_e)=\dfrac{1}{2}(\underline{\underline K}_e.\underline{U}_e).\underline{U}_e
+# \end{equation*}
 
 # The solution can be written in the form
-# $$
+# \begin{equation*}
 # \begin{bmatrix}
 # u(s)\\v(s)
 # \end{bmatrix}
 # =\underline{\underline{D}}.\underline U_e
-# $$
+# \end{equation*}
 # where 
 # 
 
-# In[6]:
+# In[7]:
 
 
 D = Matrix([[usol.rhs.diff(Ui) for Ui in Ue],
@@ -114,7 +142,7 @@ D
 
 # The total energy of the solution is
 
-# In[7]:
+# In[8]:
 
 
 total_energy_sol = simplify(total_energy.subs({u(s):usol.rhs,v(s):vsol.rhs}))
@@ -123,7 +151,7 @@ total_energy_sol
 
 # And the elemental stiffness matrix is given by
 
-# In[8]:
+# In[9]:
 
 
 Ke = Matrix([[total_energy_sol.diff(Ui,Uj) for Ui in Ue] for Uj in Ue])
@@ -134,7 +162,7 @@ Ke
 # 
 # Let us known introduce a global frame $(0,\underline{e_1},\underline{e_2})$ and let us call $\alpha$ the angle giving the orientation of the tangent  and normal vector in this frame. We can then define the coordinates of the displacement vector $\underline u$ in this new frame
 
-# In[9]:
+# In[10]:
 
 
 alpha = Symbol("\\alpha")
@@ -147,10 +175,12 @@ u_star
 # We define $\underline{U}^*_{e}$ the vector giving the component of the end-displacement 
 #  $\underline{U}_e$ in the global frame. 
 # Hence, we compute the following orthogonal matrix $T$ such that 
-# $$\underline{U}^*_e = T.\underline{U}_e,\qquad
-# \underline{U}_e = T^t.\underline{U}^*_e$$
+# \begin{equation*}
+# \underline{U}^*_e = T.\underline{U}_e,\qquad
+# \underline{U}_e = T^t.\underline{U}^*_e
+# \end{equation*}
 
-# In[10]:
+# In[11]:
 
 
 u0_s = u0 * t + v0 * n
@@ -163,7 +193,7 @@ T
 # The local stiffness matrix in the new coordinate is defined by
 # 
 
-# In[11]:
+# In[12]:
 
 
 Ke_s = (T*Ke)*T.transpose()
@@ -172,12 +202,26 @@ Ke_s
 
 # ## Frame: assembling several beams
 
-# ### Define nodes and geometry
+# ### Define the frame
+# The frame is defined by 
+# - *Geometry*: a set of `nodes` connected by `elements`. Each element is a beam.
+# - *Material properties*: the bending (`EIs`) and extensional (`EAs`) stiffness of the beams 
+# - *Loading*, composed of:
+#     - Imposed *nodal displacement*: a list of `blocked_dof` with prescribed `bc_values`
+#     - Imposed *nodal forces* (and moments): `F`
+# 
+# A frame with `n` nodes has $3 *n$ dofs. 
+# We collect them in the global generalized displacement vector $\underline U^{*}$:
+# \begin{equation*}
+# \begin{bmatrix}
+# u^{*(0)},v^{*(0)},\theta^{0}, \ldots, u^{*(i)},v^{*(i)},\theta^{*(i)},\ldots,
+#  u^{*(n)},v^{*(n)},\theta^{*(n)}
+# \end{bmatrix}^t
+# \end{equation*}
+# where $u^{*(i)},v^{*(i)},\theta^{*(i)}$ are the components of the displacement and rotation of the node $i$ in the **global reference frame**. 
 
-# In[12]:
+# In[13]:
 
-
-import numpy as np
 
 nodes = np.array([[0,0],
          [1,1],
@@ -188,6 +232,36 @@ elements = np.array([[0,1],
 
 n_nodes = len(nodes)
 n_elements = len(elements)
+print(f"Nodes: {nodes}")
+print(f"Elements: {elements}")
+
+# Global solution vector collecting the nodal displacements and rotations
+U = np.zeros(n_nodes * 3)
+
+# Imposed nodal displacements and rotations
+blocked_dof= np.array([0,1,6,7])
+bc_values = np.zeros_like(blocked_dof)
+print(f"The displacement {bc_values} are imposed on the dofs {blocked_dof}")
+
+# Force vector
+F = np.zeros(n_nodes *3)
+F[3 * 1] = 1
+F[3 * 1 + 1] = 1
+print(f"Force vector: {F} ")
+
+# Material properties
+EA_n = 1.
+EI_n = 0.1
+EAs = np.ones(len(elements))
+EIs = EI_n* np.ones(len(elements))
+print(f"EAs: {EAs} ")
+print(f"EIs: {EIs} ")
+
+
+# We define below the dof maps and the beam orientations and lengths
+
+# In[14]:
+
 
 def dof_map(e,i):
     """Returns the global dof number giving element and local dof number"""
@@ -205,58 +279,46 @@ def angle(element_nodes):
 
 Ls = np.array([length(nodes[el]) for el in elements])
 alphas = np.array([angle(nodes[el]) for el in elements])
-print(alphas)
-print(Ls)
-
-
-# ### Introduce global vector and mapping to local vectors
-
-# In[13]:
-
-
-U = np.ones(3 * n_nodes)
-
-def U_elem(U,e):
-    """ Returns the element local values in global coordinates"""
-    return np.array([U[dof_map(e,i)] for i in range(6)])
-
-def U_elem_loc(U,e):
-    """ Returns the element local values in local coordinates"""
-    T_mat = T.transpose().subs({alpha:alphas[e]})
-    return  np.dot(T_mat, U_elem(U,e))
-
-def U_node(U,n):
-    """ Returns the displacement of a node"""
-    return U.take([3 * n ,3 * n + 1])
+print(f"Beam orientations: {alphas}")
+print(f"Beam lengths: {Ls}")
 
 
 # ### Assembling the stiffness matrix
+# 
+# We assemble the global stiffness matrix from the element stiffness matrix $\underline{\underline{K}}_e$. 
+# In the code below `global_dofs` are the global dofs number corresponding to the local displacement vector $\underline{U}_e$
 
-# In[14]:
+# In[15]:
 
 
-EA_n = 1.
-EI_n = 0.1
-EAs = np.ones(len(elements))
-EIs = EI_n* np.ones(len(elements))
+# initialize the stiffness matrix
 K_global = np.zeros([3 * n_nodes,3 * n_nodes])
+# Assembling the element matrices in the global one
 for e, element in enumerate(elements):
     K_element = np.array(Ke_s.subs({"L" : Ls[e], 
                                     "ES" : EAs[e],
                                     "EI" : EIs[e],
                                     "\\alpha" : alphas[e]
                                     }),dtype=float)
-    global_dofs = [3 * element[0], 3 * element[0]+1, 3 * element[0] + 2, 3 *  element[1], 3 *  element[1]+1, 3 *  element[1] + 2] 
-    K_global[np.ix_(global_dofs,global_dofs)] += K_element #[i:i+3,i:i+3]
-    
+    # global node number of the left and right nodes in the element
+    node_0 = element[0] 
+    node_L = element[1] 
+    # global dofs number for the element vector
+    global_dofs = [3 * node_0, 
+                   3 * node_0 + 1, 
+                   3 * node_0 + 2, 
+                   3 * node_L, 
+                   3 * node_L + 1,
+                   3 * node_L + 2] 
+    # Adding element contribution to the global matrix
+    K_global[np.ix_(global_dofs,global_dofs)] += K_element 
+
+# Visualize the result
 plt.matshow(K_global,interpolation='none')
+plt.title("Global stiffness matrix")
 plt.colorbar()
-
-
-# In[15]:
-
-
-Matrix(K_global)
+# Print the matirx
+Matrix(np.round(K_global,2))
 
 
 # ### Apply BCs and loads
@@ -282,15 +344,8 @@ def bc_apply(K,F,blocked_dof,bc_values):
 # In[17]:
 
 
-blocked_dof= np.array([0,1,6,7])
-bc_values = np.zeros_like(blocked_dof)
-print(blocked_dof)
-U = np.zeros(n_nodes *3)
-F = np.zeros(n_nodes *3)
-F[3 * 1] = 1
-F[3 * 1 + 1] = 1
 Kbc, Fbc = bc_apply(K_global, F, blocked_dof, bc_values)
-Matrix(Kbc), Matrix(Fbc)
+Matrix(np.round(Kbc,2)), Matrix(Fbc)
 
 
 # ### Solve the linear system
@@ -302,9 +357,29 @@ Usol = np.linalg.solve(Kbc,Fbc)
 Usol
 
 
-# ### Visualize the results
+# ### Introduce global vector and mapping to local vectors
+# The following functions are useful to get the displacement $U_e$ of an element in global and local coordinates.
 
 # In[19]:
+
+
+def U_elem(U,e):
+    """ Returns the element local values in global coordinates"""
+    return np.array([U[dof_map(e,i)] for i in range(6)])
+
+def U_elem_loc(U,e):
+    """ Returns the element local values in local coordinates"""
+    T_mat = T.transpose().subs({alpha:alphas[e]})
+    return  np.dot(T_mat, U_elem(U,e))
+
+def U_node(U,n):
+    """ Returns the displacement of a node"""
+    return U.take([3 * n ,3 * n + 1])
+
+
+# ### Visualize the results
+
+# In[20]:
 
 
 def element_displacement(U_s,e):
@@ -337,9 +412,9 @@ for e, el in enumerate(elements):
 
 # ### Verification
 
-# The exact solution for the nodal displacement of the top node is (see Ballard, page 74)
+# The exact solution for the nodal displacement of the top node is (see {cite:p}`ballard09`, page 74)
 
-# In[20]:
+# In[21]:
 
 
 u_exact = simplify(Array([L/EA ,(1- 1/(1 + (EA * L**2)/(3 * EI)) ) * (L/EA)]))
@@ -348,7 +423,7 @@ print(u_exact.subs({L:Ls[1],EA:EA_n,EI:EI_n}))
 
 # The numerical solution is
 
-# In[21]:
+# In[22]:
 
 
 U_node(Usol,1)
@@ -362,8 +437,4 @@ U_node(Usol,1)
 #     - Take a photo of the deformed configuration of the real structure under the imposed load
 #     - Compare qualitatively with the deformed configuration plot obtained with your code
 
-# In[ ]:
-
-
-
-
+# 

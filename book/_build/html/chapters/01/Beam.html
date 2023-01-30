@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>From beams to frames &#8212; MU4MES03 - Slender structures - beams</title>
+    <title>From beams to frames &#8212; MU4MES03</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Syllabus" href="../index.html" />
+    <link rel="prev" title="MU4MES03: Slender structures" href="../index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -98,7 +98,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="../../_static/logo-SU.jpeg" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">MU4MES03 - Slender structures - beams</h1>
+      <h1 class="site-logo" id="site-title">MU4MES03</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -106,7 +106,12 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Linear beams
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    From beams to frames
@@ -171,7 +176,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/quantecon-mini-example/master?urlpath=tree/mini_book/chapters/01/Beam.ipynb"
+        <a href="https://mybinder.org/v2/gh/cmaurini/MU4MES03/master?urlpath=tree/book/chapters/01/Beam.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -288,6 +293,13 @@ title="Print to PDF"
      Bending
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-of-the-deformed-shape">
+   Plot of the deformed shape
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#potential-energy-and-elemental-stiffness-matrix">
      Potential energy and elemental stiffness matrix
@@ -306,13 +318,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#define-nodes-and-geometry">
-     Define nodes and geometry
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#introduce-global-vector-and-mapping-to-local-vectors">
-     Introduce global vector and mapping to local vectors
+    <a class="reference internal nav-link" href="#define-the-frame">
+     Define the frame
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -328,6 +335,11 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#solve-the-linear-system">
      Solve the linear system
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduce-global-vector-and-mapping-to-local-vectors">
+     Introduce global vector and mapping to local vectors
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -381,6 +393,13 @@ title="Print to PDF"
      Bending
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-of-the-deformed-shape">
+   Plot of the deformed shape
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#potential-energy-and-elemental-stiffness-matrix">
      Potential energy and elemental stiffness matrix
@@ -399,13 +418,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#define-nodes-and-geometry">
-     Define nodes and geometry
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#introduce-global-vector-and-mapping-to-local-vectors">
-     Introduce global vector and mapping to local vectors
+    <a class="reference internal nav-link" href="#define-the-frame">
+     Define the frame
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -421,6 +435,11 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#solve-the-linear-system">
      Solve the linear system
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduce-global-vector-and-mapping-to-local-vectors">
+     Introduce global vector and mapping to local vectors
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -452,11 +471,13 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="from-beams-to-frames">
 <h1>From beams to frames<a class="headerlink" href="#from-beams-to-frames" title="Permalink to this headline">#</a></h1>
-<p>This notebooks introduce a simple method for frame modelling.
-Objectives:</p>
+<p>This notebook introduces a simple python code for frame modelling.</p>
+<p>Objectives:</p>
 <ul class="simple">
 <li><p>Solve the linear beam differential equations using sympy</p></li>
-<li></li>
+<li><p>Compute the beam element stiffness matrix</p></li>
+<li><p>Assemble the element matrix to form a frame</p></li>
+<li><p>Solve a frame problem and visualize the result</p></li>
 </ul>
 <p>Import statements : we use sympy and matplotlib</p>
 <div class="cell docutils container">
@@ -464,6 +485,8 @@ Objectives:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="p">(</span><span class="n">Function</span><span class="p">,</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">Derivative</span><span class="p">,</span> <span class="n">Eq</span><span class="p">,</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">simplify</span><span class="p">,</span> <span class="n">integrate</span><span class="p">,</span> <span class="n">Matrix</span><span class="p">,</span> <span class="n">Array</span><span class="p">,</span> <span class="n">latex</span><span class="p">,</span>
                    <span class="n">dsolve</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">collect</span><span class="p">,</span> <span class="n">tensorcontraction</span><span class="p">,</span><span class="n">tensorproduct</span><span class="p">,</span> <span class="n">derive_by_array</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span>
 </pre></div>
 </div>
 </div>
@@ -471,12 +494,13 @@ Objectives:</p>
 <section id="elemental-beam-problem">
 <h2>Elemental beam problem<a class="headerlink" href="#elemental-beam-problem" title="Permalink to this headline">#</a></h2>
 <p>We start by solving the elemental beam problem. It consists of a clamped-clamped straight beam where we apply the displacement and rotations at the two ends.
-We denote by <span class="math notranslate nohighlight">\(\underline t\)</span> and <span class="math notranslate nohighlight">\(\underline n\)</span> the beam tangent and normal director, <span class="math notranslate nohighlight">\(L\)</span> the beam length, <span class="math notranslate nohighlight">\(EI\)</span> and <span class="math notranslate nohighlight">\(ES\)</span> the bending and extensional stiffness. We assume an unsherable extensible Navier-Bernoulli model and that the beam. We decompose the displacement and rotation as follows:
-$<span class="math notranslate nohighlight">\(
+We denote by <span class="math notranslate nohighlight">\(\underline t\)</span> and <span class="math notranslate nohighlight">\(\underline n\)</span> the beam tangent and normal director, <span class="math notranslate nohighlight">\(L\)</span> the beam length, <span class="math notranslate nohighlight">\(EI\)</span> and <span class="math notranslate nohighlight">\(ES\)</span> the bending and extensional stiffness. We assume an unsherable extensible Navier-Bernoulli model and that the beam. We decompose the displacement and rotation as follows:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 \underline{u}(s)=u(s)\underline t+v(s)\underline n,\qquad 
 \underline{\theta}(s)=\theta(s)\,\underline b,\qquad\underline {b}:=\underline t\times\underline n
-\)</span>$
-We introduce below the notation and the expression of the potential energy using <code class="docutils literal notranslate"><span class="pre">sympy</span></code></p>
+\end{equation*}\]</div>
+<p>We introduce below the notation and the expression of the potential energy using <code class="docutils literal notranslate"><span class="pre">sympy</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;s L&quot;</span><span class="p">)</span>
@@ -497,15 +521,19 @@ We introduce below the notation and the expression of the potential energy using
 </div>
 <p>In the absence of distributed loading the governing equations are as follows (they can by found by imposing the stationarity of the potential energy)</p>
 <ul class="simple">
-<li><p>Extension
-$<span class="math notranslate nohighlight">\(
-u''(s)=0\quad\forall  s\in(0,L),\qquad u(0)=u_0,\qquad u(L)=u_L
-\)</span>$</p></li>
-<li><p>Bending
-$<span class="math notranslate nohighlight">\(
-v''''(s)=0\quad\forall  s\in(0,L),\qquad v(0)=v_0,\;v'(0)=\theta_0,\; v(L)=v_L,\; v'(L)=\theta_L
-\)</span>$</p></li>
+<li><p>Extension</p></li>
 </ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+u''(s)=0\quad\forall  s\in(0,L),\qquad u(0)=u_0,\qquad u(L)=u_L
+\end{equation*}\]</div>
+<ul class="simple">
+<li><p>Bending</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+v''''(s)=0\quad\forall  s\in(0,L),\qquad v(0)=v_0,\;v'(0)=\theta_0,\; v(L)=v_L,\; v'(L)=\theta_L
+\end{equation*}\]</div>
 <section id="extension">
 <h3>Extension<a class="headerlink" href="#extension" title="Permalink to this headline">#</a></h3>
 <p>We solve below the extensional problem using <code class="docutils literal notranslate"><span class="pre">sympy</span></code></p>
@@ -546,33 +574,58 @@ v''''(s)=0\quad\forall  s\in(0,L),\qquad v(0)=v_0,\;v'(0)=\theta_0,\; v(L)=v_L,\
 </div>
 </div>
 </section>
-<section id="potential-energy-and-elemental-stiffness-matrix">
-<h3>Potential energy and elemental stiffness matrix<a class="headerlink" href="#potential-energy-and-elemental-stiffness-matrix" title="Permalink to this headline">#</a></h3>
-<p>Hence, we can compute the potential energy of the system in terms of the imposed end-displacement and end-rotation in terms of an elemental stiffness matrix <span class="math notranslate nohighlight">\(\underline{\underline{K}}\)</span> as
-$<span class="math notranslate nohighlight">\(
-E_p(\underline U)=\dfrac{1}{2}(\underline{\underline K}.\underline{U}).\underline{U}
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>\underline{U}$ is the vector collecting the imposed displacement and rotation</p>
+</section>
+<section id="plot-of-the-deformed-shape">
+<h2>Plot of the deformed shape<a class="headerlink" href="#plot-of-the-deformed-shape" title="Permalink to this headline">#</a></h2>
+<p>Let as define the vector <span class="math notranslate nohighlight">\(\underline{U}_e\)</span> is the vector collecting the imposed displacement and rotation</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ue</span> <span class="o">=</span> <span class="n">Array</span><span class="p">((</span><span class="n">u0</span><span class="p">,</span><span class="n">v0</span><span class="p">,</span><span class="n">theta0</span><span class="p">,</span><span class="n">uL</span><span class="p">,</span><span class="n">vL</span><span class="p">,</span><span class="n">thetaL</span><span class="p">))</span>
-<span class="n">Ue</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can plot the deformed shape for given values of <span class="math notranslate nohighlight">\(U_e\)</span>.
+You can modify the values to get the different shapes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="n">Ue_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">pl</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">plot_parametric</span><span class="p">(</span><span class="n">s</span> <span class="o">+</span> <span class="n">usol</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">u0</span><span class="p">:</span><span class="n">Ue_values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                                              <span class="n">uL</span><span class="p">:</span><span class="n">Ue_values</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
+                                              <span class="n">L</span><span class="p">:</span><span class="mi">1</span><span class="p">}),</span>
+                           <span class="n">vsol</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">v0</span><span class="p">:</span><span class="n">Ue_values</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> 
+                                          <span class="n">vL</span><span class="p">:</span><span class="n">Ue_values</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> 
+                                          <span class="n">theta0</span><span class="p">:</span><span class="n">Ue_values</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> 
+                                          <span class="n">thetaL</span><span class="p">:</span><span class="n">Ue_values</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span>
+                                          <span class="n">L</span><span class="p">:</span><span class="mi">1</span><span class="p">}),</span>
+                           <span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+                           <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+                           <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
+                           <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Deformed shape for $U_e=$</span><span class="si">{</span><span class="n">Ue_values</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \left[\begin{matrix}u_{0} &amp; v_{0} &amp; \theta_{0} &amp; u_{L} &amp; v_{L} &amp; \theta_{L}\end{matrix}\right]\]</div>
+<img alt="../../_images/Beam_14_0.png" src="../../_images/Beam_14_0.png" />
 </div>
 </div>
-<p>The solution can be written in the form
-$<span class="math notranslate nohighlight">\(
+<section id="potential-energy-and-elemental-stiffness-matrix">
+<h3>Potential energy and elemental stiffness matrix<a class="headerlink" href="#potential-energy-and-elemental-stiffness-matrix" title="Permalink to this headline">#</a></h3>
+<p>Hence, we can compute the potential energy of the system in terms of the imposed end-displacement and end-rotation in terms of an elemental stiffness matrix <span class="math notranslate nohighlight">\(\underline{\underline{K}}_e\)</span> as</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+E_p(\underline U_e)=\dfrac{1}{2}(\underline{\underline K}_e.\underline{U}_e).\underline{U}_e
+\end{equation*}\]</div>
+<p>The solution can be written in the form</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 \begin{bmatrix}
 u(s)\\v(s)
 \end{bmatrix}
 =\underline{\underline{D}}.\underline U_e
-\)</span>$
-where</p>
+\end{equation*}\]</div>
+<p>where</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="n">usol</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Ui</span><span class="p">)</span> <span class="k">for</span> <span class="n">Ui</span> <span class="ow">in</span> <span class="n">Ue</span><span class="p">],</span>
@@ -634,9 +687,12 @@ where</p>
 </div>
 <p>We define <span class="math notranslate nohighlight">\(\underline{U}^*_{e}\)</span> the vector giving the component of the end-displacement
 <span class="math notranslate nohighlight">\(\underline{U}_e\)</span> in the global frame.
-Hence, we compute the following orthogonal matrix <span class="math notranslate nohighlight">\(T\)</span> such that
-$<span class="math notranslate nohighlight">\(\underline{U}^*_e = T.\underline{U}_e,\qquad
-\underline{U}_e = T^t.\underline{U}^*_e\)</span>$</p>
+Hence, we compute the following orthogonal matrix <span class="math notranslate nohighlight">\(T\)</span> such that</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\underline{U}^*_e = T.\underline{U}_e,\qquad
+\underline{U}_e = T^t.\underline{U}^*_e
+\end{equation*}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u0_s</span> <span class="o">=</span> <span class="n">u0</span> <span class="o">*</span> <span class="n">t</span> <span class="o">+</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">n</span>
@@ -668,13 +724,32 @@ $<span class="math notranslate nohighlight">\(\underline{U}^*_e = T.\underline{U
 </section>
 <section id="frame-assembling-several-beams">
 <h2>Frame: assembling several beams<a class="headerlink" href="#frame-assembling-several-beams" title="Permalink to this headline">#</a></h2>
-<section id="define-nodes-and-geometry">
-<h3>Define nodes and geometry<a class="headerlink" href="#define-nodes-and-geometry" title="Permalink to this headline">#</a></h3>
+<section id="define-the-frame">
+<h3>Define the frame<a class="headerlink" href="#define-the-frame" title="Permalink to this headline">#</a></h3>
+<p>The frame is defined by</p>
+<ul class="simple">
+<li><p><em>Geometry</em>: a set of <code class="docutils literal notranslate"><span class="pre">nodes</span></code> connected by <code class="docutils literal notranslate"><span class="pre">elements</span></code>. Each element is a beam.</p></li>
+<li><p><em>Material properties</em>: the bending (<code class="docutils literal notranslate"><span class="pre">EIs</span></code>) and extensional (<code class="docutils literal notranslate"><span class="pre">EAs</span></code>) stiffness of the beams</p></li>
+<li><p><em>Loading</em>, composed of:</p>
+<ul>
+<li><p>Imposed <em>nodal displacement</em>: a list of <code class="docutils literal notranslate"><span class="pre">blocked_dof</span></code> with prescribed <code class="docutils literal notranslate"><span class="pre">bc_values</span></code></p></li>
+<li><p>Imposed <em>nodal forces</em> (and moments): <code class="docutils literal notranslate"><span class="pre">F</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>A frame with <code class="docutils literal notranslate"><span class="pre">n</span></code> nodes has <span class="math notranslate nohighlight">\(3 *n\)</span> dofs.
+We collect them in the global generalized displacement vector <span class="math notranslate nohighlight">\(\underline U^{*}\)</span>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{bmatrix}
+u^{*(0)},v^{*(0)},\theta^{0}, \ldots, u^{*(i)},v^{*(i)},\theta^{*(i)},\ldots,
+ u^{*(n)},v^{*(n)},\theta^{*(n)}
+\end{bmatrix}^t
+\end{equation*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(u^{*(i)},v^{*(i)},\theta^{*(i)}\)</span> are the components of the displacement and rotation of the node <span class="math notranslate nohighlight">\(i\)</span> in the <strong>global reference frame</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">nodes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nodes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
          <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
          <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
 
@@ -683,8 +758,51 @@ $<span class="math notranslate nohighlight">\(\underline{U}^*_e = T.\underline{U
 
 <span class="n">n_nodes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
 <span class="n">n_elements</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nodes: </span><span class="si">{</span><span class="n">nodes</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Elements: </span><span class="si">{</span><span class="n">elements</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">dof_map</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="n">i</span><span class="p">):</span>
+<span class="c1"># Global solution vector collecting the nodal displacements and rotations</span>
+<span class="n">U</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_nodes</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># Imposed nodal displacements and rotations</span>
+<span class="n">blocked_dof</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="n">bc_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">blocked_dof</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The displacement </span><span class="si">{</span><span class="n">bc_values</span><span class="si">}</span><span class="s2"> are imposed on the dofs </span><span class="si">{</span><span class="n">blocked_dof</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Force vector</span>
+<span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_nodes</span> <span class="o">*</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">F</span><span class="p">[</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">F</span><span class="p">[</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Force vector: </span><span class="si">{</span><span class="n">F</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">)</span>
+
+<span class="c1"># Material properties</span>
+<span class="n">EA_n</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">EI_n</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">EAs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">elements</span><span class="p">))</span>
+<span class="n">EIs</span> <span class="o">=</span> <span class="n">EI_n</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">elements</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;EAs: </span><span class="si">{</span><span class="n">EAs</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;EIs: </span><span class="si">{</span><span class="n">EIs</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nodes: [[0 0]
+ [1 1]
+ [2 0]]
+Elements: [[0 1]
+ [1 2]]
+The displacement [0 0 0 0] are imposed on the dofs [0 1 6 7]
+Force vector: [0. 0. 0. 1. 1. 0. 0. 0. 0.] 
+EAs: [1. 1.] 
+EIs: [0.1 0.1] 
+</pre></div>
+</div>
+</div>
+</div>
+<p>We define below the dof maps and the beam orientations and lengths</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dof_map</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="n">i</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns the global dof number giving element and local dof number&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">e</span> <span class="o">+</span> <span class="n">i</span>
 
@@ -700,37 +818,14 @@ $<span class="math notranslate nohighlight">\(\underline{U}^*_e = T.\underline{U
 
 <span class="n">Ls</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">length</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="n">el</span><span class="p">])</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">elements</span><span class="p">])</span>
 <span class="n">alphas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">angle</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="n">el</span><span class="p">])</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">elements</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">alphas</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Ls</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Beam orientations: </span><span class="si">{</span><span class="n">alphas</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Beam lengths: </span><span class="si">{</span><span class="n">Ls</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.78539816 -0.78539816]
-[1.41421356 1.41421356]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="introduce-global-vector-and-mapping-to-local-vectors">
-<h3>Introduce global vector and mapping to local vectors<a class="headerlink" href="#introduce-global-vector-and-mapping-to-local-vectors" title="Permalink to this headline">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">U</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">n_nodes</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">U_elem</span><span class="p">(</span><span class="n">U</span><span class="p">,</span><span class="n">e</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the element local values in global coordinates&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">U</span><span class="p">[</span><span class="n">dof_map</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="n">i</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)])</span>
-
-<span class="k">def</span> <span class="nf">U_elem_loc</span><span class="p">(</span><span class="n">U</span><span class="p">,</span><span class="n">e</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the element local values in local coordinates&quot;&quot;&quot;</span>
-    <span class="n">T_mat</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">alpha</span><span class="p">:</span><span class="n">alphas</span><span class="p">[</span><span class="n">e</span><span class="p">]})</span>
-    <span class="k">return</span>  <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">T_mat</span><span class="p">,</span> <span class="n">U_elem</span><span class="p">(</span><span class="n">U</span><span class="p">,</span><span class="n">e</span><span class="p">))</span>
-
-<span class="k">def</span> <span class="nf">U_node</span><span class="p">(</span><span class="n">U</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the displacement of a node&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">U</span><span class="o">.</span><span class="n">take</span><span class="p">([</span><span class="mi">3</span> <span class="o">*</span> <span class="n">n</span> <span class="p">,</span><span class="mi">3</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Beam orientations: [ 0.78539816 -0.78539816]
+Beam lengths: [1.41421356 1.41421356]
 </pre></div>
 </div>
 </div>
@@ -738,43 +833,45 @@ $<span class="math notranslate nohighlight">\(\underline{U}^*_e = T.\underline{U
 </section>
 <section id="assembling-the-stiffness-matrix">
 <h3>Assembling the stiffness matrix<a class="headerlink" href="#assembling-the-stiffness-matrix" title="Permalink to this headline">#</a></h3>
+<p>We assemble the global stiffness matrix from the element stiffness matrix <span class="math notranslate nohighlight">\(\underline{\underline{K}}_e\)</span>.
+In the code below <code class="docutils literal notranslate"><span class="pre">global_dofs</span></code> are the global dofs number corresponding to the local displacement vector <span class="math notranslate nohighlight">\(\underline{U}_e\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">EA_n</span> <span class="o">=</span> <span class="mf">1.</span>
-<span class="n">EI_n</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">EAs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">elements</span><span class="p">))</span>
-<span class="n">EIs</span> <span class="o">=</span> <span class="n">EI_n</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">elements</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># initialize the stiffness matrix</span>
 <span class="n">K_global</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">3</span> <span class="o">*</span> <span class="n">n_nodes</span><span class="p">,</span><span class="mi">3</span> <span class="o">*</span> <span class="n">n_nodes</span><span class="p">])</span>
+<span class="c1"># Assembling the element matrices in the global one</span>
 <span class="k">for</span> <span class="n">e</span><span class="p">,</span> <span class="n">element</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">elements</span><span class="p">):</span>
     <span class="n">K_element</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Ke_s</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="s2">&quot;L&quot;</span> <span class="p">:</span> <span class="n">Ls</span><span class="p">[</span><span class="n">e</span><span class="p">],</span> 
                                     <span class="s2">&quot;ES&quot;</span> <span class="p">:</span> <span class="n">EAs</span><span class="p">[</span><span class="n">e</span><span class="p">],</span>
                                     <span class="s2">&quot;EI&quot;</span> <span class="p">:</span> <span class="n">EIs</span><span class="p">[</span><span class="n">e</span><span class="p">],</span>
                                     <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">alpha&quot;</span> <span class="p">:</span> <span class="n">alphas</span><span class="p">[</span><span class="n">e</span><span class="p">]</span>
                                     <span class="p">}),</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
-    <span class="n">global_dofs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span> <span class="o">*</span> <span class="n">element</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">element</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">element</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span>  <span class="n">element</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">3</span> <span class="o">*</span>  <span class="n">element</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span>  <span class="n">element</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span> 
-    <span class="n">K_global</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ix_</span><span class="p">(</span><span class="n">global_dofs</span><span class="p">,</span><span class="n">global_dofs</span><span class="p">)]</span> <span class="o">+=</span> <span class="n">K_element</span> <span class="c1">#[i:i+3,i:i+3]</span>
-    
+    <span class="c1"># global node number of the left and right nodes in the element</span>
+    <span class="n">node_0</span> <span class="o">=</span> <span class="n">element</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> 
+    <span class="n">node_L</span> <span class="o">=</span> <span class="n">element</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> 
+    <span class="c1"># global dofs number for the element vector</span>
+    <span class="n">global_dofs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span> <span class="o">*</span> <span class="n">node_0</span><span class="p">,</span> 
+                   <span class="mi">3</span> <span class="o">*</span> <span class="n">node_0</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> 
+                   <span class="mi">3</span> <span class="o">*</span> <span class="n">node_0</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> 
+                   <span class="mi">3</span> <span class="o">*</span> <span class="n">node_L</span><span class="p">,</span> 
+                   <span class="mi">3</span> <span class="o">*</span> <span class="n">node_L</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+                   <span class="mi">3</span> <span class="o">*</span> <span class="n">node_L</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span> 
+    <span class="c1"># Adding element contribution to the global matrix</span>
+    <span class="n">K_global</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ix_</span><span class="p">(</span><span class="n">global_dofs</span><span class="p">,</span><span class="n">global_dofs</span><span class="p">)]</span> <span class="o">+=</span> <span class="n">K_element</span> 
+
+<span class="c1"># Visualize the result</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">K_global</span><span class="p">,</span><span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Global stiffness matrix&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x1215d4250&gt;
-</pre></div>
-</div>
-<img alt="../../_images/Beam_30_1.png" src="../../_images/Beam_30_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Matrix</span><span class="p">(</span><span class="n">K_global</span><span class="p">)</span>
+<span class="c1"># Print the matirx</span>
+<span class="n">Matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">K_global</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\begin{split}\displaystyle \left[\begin{matrix}0.565685424949238 &amp; -0.14142135623731 &amp; 0.212132034355964 &amp; -0.565685424949238 &amp; 0.14142135623731 &amp; 0.212132034355964 &amp; 0 &amp; 0 &amp; 0\\-0.14142135623731 &amp; 0.565685424949238 &amp; 0.212132034355964 &amp; 0.14142135623731 &amp; -0.565685424949238 &amp; 0.212132034355964 &amp; 0 &amp; 0 &amp; 0\\0.212132034355964 &amp; 0.212132034355964 &amp; 0.282842712474619 &amp; -0.212132034355964 &amp; -0.212132034355964 &amp; 0.14142135623731 &amp; 0 &amp; 0 &amp; 0\\-0.565685424949238 &amp; 0.14142135623731 &amp; -0.212132034355964 &amp; 1.13137084989848 &amp; 0 &amp; -0.424264068711928 &amp; -0.565685424949238 &amp; -0.14142135623731 &amp; -0.212132034355964\\0.14142135623731 &amp; -0.565685424949238 &amp; -0.212132034355964 &amp; 0 &amp; 1.13137084989848 &amp; 0 &amp; -0.14142135623731 &amp; -0.565685424949238 &amp; 0.212132034355964\\0.212132034355964 &amp; 0.212132034355964 &amp; 0.14142135623731 &amp; -0.424264068711928 &amp; 0 &amp; 0.565685424949238 &amp; 0.212132034355964 &amp; -0.212132034355964 &amp; 0.14142135623731\\0 &amp; 0 &amp; 0 &amp; -0.565685424949238 &amp; -0.14142135623731 &amp; 0.212132034355964 &amp; 0.565685424949238 &amp; 0.14142135623731 &amp; 0.212132034355964\\0 &amp; 0 &amp; 0 &amp; -0.14142135623731 &amp; -0.565685424949238 &amp; -0.212132034355964 &amp; 0.14142135623731 &amp; 0.565685424949238 &amp; -0.212132034355964\\0 &amp; 0 &amp; 0 &amp; -0.212132034355964 &amp; 0.212132034355964 &amp; 0.14142135623731 &amp; 0.212132034355964 &amp; -0.212132034355964 &amp; 0.282842712474619\end{matrix}\right]\end{split}\]</div>
+\[\begin{split}\displaystyle \left[\begin{matrix}0.57 &amp; -0.14 &amp; 0.21 &amp; -0.57 &amp; 0.14 &amp; 0.21 &amp; 0 &amp; 0 &amp; 0\\-0.14 &amp; 0.57 &amp; 0.21 &amp; 0.14 &amp; -0.57 &amp; 0.21 &amp; 0 &amp; 0 &amp; 0\\0.21 &amp; 0.21 &amp; 0.28 &amp; -0.21 &amp; -0.21 &amp; 0.14 &amp; 0 &amp; 0 &amp; 0\\-0.57 &amp; 0.14 &amp; -0.21 &amp; 1.13 &amp; 0 &amp; -0.42 &amp; -0.57 &amp; -0.14 &amp; -0.21\\0.14 &amp; -0.57 &amp; -0.21 &amp; 0 &amp; 1.13 &amp; 0 &amp; -0.14 &amp; -0.57 &amp; 0.21\\0.21 &amp; 0.21 &amp; 0.14 &amp; -0.42 &amp; 0 &amp; 0.57 &amp; 0.21 &amp; -0.21 &amp; 0.14\\0 &amp; 0 &amp; 0 &amp; -0.57 &amp; -0.14 &amp; 0.21 &amp; 0.57 &amp; 0.14 &amp; 0.21\\0 &amp; 0 &amp; 0 &amp; -0.14 &amp; -0.57 &amp; -0.21 &amp; 0.14 &amp; 0.57 &amp; -0.21\\0 &amp; 0 &amp; 0 &amp; -0.21 &amp; 0.21 &amp; 0.14 &amp; 0.21 &amp; -0.21 &amp; 0.28\end{matrix}\right]\end{split}\]</div>
+<img alt="../../_images/Beam_34_1.png" src="../../_images/Beam_34_1.png" />
 </div>
 </div>
 </section>
@@ -800,32 +897,22 @@ $<span class="math notranslate nohighlight">\(\underline{U}^*_e = T.\underline{U
 <p>We select the blocked dofs, the apply force and define the final linear system to solve</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blocked_dof</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
-<span class="n">bc_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">blocked_dof</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">blocked_dof</span><span class="p">)</span>
-<span class="n">U</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_nodes</span> <span class="o">*</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_nodes</span> <span class="o">*</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">F</span><span class="p">[</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">F</span><span class="p">[</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">Kbc</span><span class="p">,</span> <span class="n">Fbc</span> <span class="o">=</span> <span class="n">bc_apply</span><span class="p">(</span><span class="n">K_global</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">blocked_dof</span><span class="p">,</span> <span class="n">bc_values</span><span class="p">)</span>
-<span class="n">Matrix</span><span class="p">(</span><span class="n">Kbc</span><span class="p">),</span> <span class="n">Matrix</span><span class="p">(</span><span class="n">Fbc</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Kbc</span><span class="p">,</span> <span class="n">Fbc</span> <span class="o">=</span> <span class="n">bc_apply</span><span class="p">(</span><span class="n">K_global</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">blocked_dof</span><span class="p">,</span> <span class="n">bc_values</span><span class="p">)</span>
+<span class="n">Matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">Kbc</span><span class="p">,</span><span class="mi">2</span><span class="p">)),</span> <span class="n">Matrix</span><span class="p">(</span><span class="n">Fbc</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 1 6 7]
-</pre></div>
-</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Matrix([
- [1.0,   0,                  0,                  0,                  0,                  0,   0,   0,                  0],
- [  0, 1.0,                  0,                  0,                  0,                  0,   0,   0,                  0],
- [  0,   0,  0.282842712474619, -0.212132034355964, -0.212132034355964,   0.14142135623731,   0,   0,                  0],
- [  0,   0, -0.212132034355964,   1.13137084989848,                  0, -0.424264068711928,   0,   0, -0.212132034355964],
- [  0,   0, -0.212132034355964,                  0,   1.13137084989848,                  0,   0,   0,  0.212132034355964],
- [  0,   0,   0.14142135623731, -0.424264068711928,                  0,  0.565685424949238,   0,   0,   0.14142135623731],
- [  0,   0,                  0,                  0,                  0,                  0, 1.0,   0,                  0],
- [  0,   0,                  0,                  0,                  0,                  0,   0, 1.0,                  0],
- [  0,   0,                  0, -0.212132034355964,  0.212132034355964,   0.14142135623731,   0,   0,  0.282842712474619]]),
+ [1.0,   0,     0,     0,     0,     0,   0,   0,     0],
+ [  0, 1.0,     0,     0,     0,     0,   0,   0,     0],
+ [  0,   0,  0.28, -0.21, -0.21,  0.14,   0,   0,     0],
+ [  0,   0, -0.21,  1.13,     0, -0.42,   0,   0, -0.21],
+ [  0,   0, -0.21,     0,  1.13,     0,   0,   0,  0.21],
+ [  0,   0,  0.14, -0.42,     0,  0.57,   0,   0,  0.14],
+ [  0,   0,     0,     0,     0,     0, 1.0,   0,     0],
+ [  0,   0,     0,     0,     0,     0,   0, 1.0,     0],
+ [  0,   0,     0, -0.21,  0.21,  0.14,   0,   0,  0.28]]),
  Matrix([
  [  0],
  [  0],
@@ -853,6 +940,28 @@ $<span class="math notranslate nohighlight">\(\underline{U}^*_e = T.\underline{U
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.        ,  0.        ,  1.62941997,  1.41421356,  1.22975092,
         0.70710678,  0.        ,  0.        , -0.21520641])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="introduce-global-vector-and-mapping-to-local-vectors">
+<h3>Introduce global vector and mapping to local vectors<a class="headerlink" href="#introduce-global-vector-and-mapping-to-local-vectors" title="Permalink to this headline">#</a></h3>
+<p>The following functions are useful to get the displacement <span class="math notranslate nohighlight">\(U_e\)</span> of an element in global and local coordinates.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">U_elem</span><span class="p">(</span><span class="n">U</span><span class="p">,</span><span class="n">e</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the element local values in global coordinates&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">U</span><span class="p">[</span><span class="n">dof_map</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="n">i</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)])</span>
+
+<span class="k">def</span> <span class="nf">U_elem_loc</span><span class="p">(</span><span class="n">U</span><span class="p">,</span><span class="n">e</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the element local values in local coordinates&quot;&quot;&quot;</span>
+    <span class="n">T_mat</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">alpha</span><span class="p">:</span><span class="n">alphas</span><span class="p">[</span><span class="n">e</span><span class="p">]})</span>
+    <span class="k">return</span>  <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">T_mat</span><span class="p">,</span> <span class="n">U_elem</span><span class="p">(</span><span class="n">U</span><span class="p">,</span><span class="n">e</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">U_node</span><span class="p">(</span><span class="n">U</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the displacement of a node&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">U</span><span class="o">.</span><span class="n">take</span><span class="p">([</span><span class="mi">3</span> <span class="o">*</span> <span class="n">n</span> <span class="p">,</span><span class="mi">3</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -892,13 +1001,13 @@ $<span class="math notranslate nohighlight">\(\underline{U}^*_e = T.\underline{U
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Beam_39_0.png" src="../../_images/Beam_39_0.png" />
+<img alt="../../_images/Beam_44_0.png" src="../../_images/Beam_44_0.png" />
 </div>
 </div>
 </section>
 <section id="verification">
 <h3>Verification<a class="headerlink" href="#verification" title="Permalink to this headline">#</a></h3>
-<p>The exact solution for the nodal displacement of the top node is (see Ballard, page 74)</p>
+<p>The exact solution for the nodal displacement of the top node is (see <span id="id1">[<a class="reference internal" href="../index.html#id4" title="Patrick Ballard and Alain Millard. Poutres et arcs élastiques. Les éditions de l'Ecole Polytechnique, 2009.">BM09</a>]</span>, page 74)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u_exact</span> <span class="o">=</span> <span class="n">simplify</span><span class="p">(</span><span class="n">Array</span><span class="p">([</span><span class="n">L</span><span class="o">/</span><span class="n">EA</span> <span class="p">,(</span><span class="mi">1</span><span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">EA</span> <span class="o">*</span> <span class="n">L</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">EI</span><span class="p">))</span> <span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">L</span><span class="o">/</span><span class="n">EA</span><span class="p">)]))</span>
@@ -973,7 +1082,7 @@ $<span class="math notranslate nohighlight">\(\underline{U}^*_e = T.\underline{U
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Syllabus</p>
+            <p class="prev-next-title">MU4MES03: Slender structures</p>
         </div>
     </a>
 </div>

@@ -1,6 +1,9 @@
-format: jb-article
+format: jb-book
 root: chapters/index
-sections: 
-- file: chapters/syllabus.md
-- file: chapters/01/linear_beams.md
-- file: chapters/01/Beam.ipynb
+options:  # The options key will be applied to all chapters, but not sub-sections
+  numbered: True
+#  - file: chapters/syllabus.md
+parts: 
+  - caption: Linear beams
+    chapters:
+    - file: chapters/01/Beam.ipynb
