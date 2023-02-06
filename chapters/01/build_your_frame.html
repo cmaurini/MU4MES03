@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="prev" title="From beams to frames" href="Beam.html" />
@@ -300,12 +302,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Build your frame
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coiled-beams">
+   Coiled beams
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -317,6 +348,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Build your frame
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coiled-beams">
+   Coiled beams
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -342,6 +391,18 @@ title="Print to PDF"
 <li><p><a class="reference external" href="https://moodle-sciences-22.sorbonne-universite.fr/mod/assign/view.php?id=138567">https://moodle-sciences-22.sorbonne-universite.fr/mod/assign/view.php?id=138567</a>
 a pdf print of the notebook including the points above. Name your file as <strong>DM_frame_groupe_Y.pdf</strong></p></li>
 </ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="coiled-beams">
+<h1>Coiled beams<a class="headerlink" href="#coiled-beams" title="Permalink to this headline">#</a></h1>
+<p>We will show the next lesson that the equivalent extensional and bending stiffness of the coiled beams composing the Mola models are given by
+$<span class="math notranslate nohighlight">\(
+(EI)_{eq}=\frac{4EIG}{\pi H(2G+E)n}
+\)</span><span class="math notranslate nohighlight">\(
+where \)</span>E<span class="math notranslate nohighlight">\( and \)</span>G<span class="math notranslate nohighlight">\( are the Young moduli and the shear stiffness of material composing the coils, \)</span>n<span class="math notranslate nohighlight">\( is the number of coils per unit length, \)</span>I<span class="math notranslate nohighlight">\( is the
+the geometrical quadratic moment of the circular coil cross section, and \)</span>H$ is the overall coil diameter.</p>
+<ol class="simple">
+<li><p>Design and perform with the Mola model’springs a simple experience to validate this formula. Compare the experimental results with the theoretical prediction.</p></li>
+</ol>
 </section>
 
     <script type="text/x-thebe-config">
