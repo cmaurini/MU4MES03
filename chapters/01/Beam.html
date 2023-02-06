@@ -131,6 +131,11 @@ const thebe_selector_output = ".output, .cell_output"
    Build your frame
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coiled_beams.html">
+   Coiled beams
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -1048,7 +1053,8 @@ In the code below <code class="docutils literal notranslate"><span class="pre">g
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">U_elem</span><span class="p">(</span><span class="n">U</span><span class="p">,</span><span class="n">e</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the element local values in global coordinates&quot;&quot;&quot;</span>
-    <span class="n">glob_dofs</span> <span class="o">=</span> <span class="n">global_dofs_element</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    <span class="n">glob_dofs</span> <span class="o">=</span> <span class="n">global_dofs_element</span><span class="p">(</span><span class="n">elements</span><span class="p">[</span><span class="n">e</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">glob_dofs</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">U</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">glob_dofs</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">U_elem_loc</span><span class="p">(</span><span class="n">U</span><span class="p">,</span><span class="n">e</span><span class="p">):</span>
@@ -1060,35 +1066,15 @@ In the code below <code class="docutils literal notranslate"><span class="pre">g
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Returns the displacement of a node&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">U</span><span class="o">.</span><span class="n">take</span><span class="p">([</span><span class="mi">3</span> <span class="o">*</span> <span class="n">n</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
 
-<span class="n">U_elem</span><span class="p">(</span><span class="n">U</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">U_elem</span><span class="p">(</span><span class="n">U</span><span class="p">,</span><span class="n">e</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">35</span><span class="p">],</span> <span class="n">line</span> <span class="mi">15</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span><span class="w">     </span><span class="sd">&quot;&quot;&quot; Returns the displacement of a node&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="k">return</span> <span class="n">U</span><span class="o">.</span><span class="n">take</span><span class="p">([</span><span class="mi">3</span> <span class="o">*</span> <span class="n">n</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
-<span class="ne">---&gt; </span><span class="mi">15</span> <span class="n">U_elem</span><span class="p">(</span><span class="n">U</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="nn">Cell In[35], line 3,</span> in <span class="ni">U_elem</span><span class="nt">(U, e)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">U_elem</span><span class="p">(</span><span class="n">U</span><span class="p">,</span><span class="n">e</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="w">     </span><span class="sd">&quot;&quot;&quot; Returns the element local values in global coordinates&quot;&quot;&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">glob_dofs</span> <span class="o">=</span> <span class="n">global_dofs_element</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="k">return</span> <span class="n">U</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">glob_dofs</span><span class="p">)</span>
-
-<span class="nn">Cell In[25], line 6,</span> in <span class="ni">global_dofs_element</span><span class="nt">(element)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">global_dofs_element</span><span class="p">(</span><span class="n">element</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="sd">     Returns the global dof numbers given the element </span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="sd">     (as a pair of node numbers) </span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="n">node_0</span> <span class="o">=</span> <span class="n">element</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> 
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">node_L</span> <span class="o">=</span> <span class="n">element</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> 
-<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="c1"># global dofs number for the element vector</span>
-
-<span class="ne">TypeError</span>: &#39;int&#39; object is not subscriptable
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 4, 5, 6, 7, 8]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0., 0., 0., 0., 0., 0.])
 </pre></div>
 </div>
 </div>
@@ -1127,46 +1113,8 @@ In the code below <code class="docutils literal notranslate"><span class="pre">g
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">34</span><span class="p">],</span> <span class="n">line</span> <span class="mi">18</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="k">for</span> <span class="n">e</span><span class="p">,</span> <span class="n">el</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">elements</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="n">factor</span> <span class="o">=</span> <span class="mf">.5</span> 
-<span class="ne">---&gt; </span><span class="mi">18</span>     <span class="n">fun</span> <span class="o">=</span> <span class="n">element_deformed</span><span class="p">(</span><span class="n">Usol</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">factor</span><span class="o">=</span><span class="n">factor</span><span class="p">)</span>
-<span class="nn">     19     plt.plot([fun[0].subs({s:sv}) for sv</span> in <span class="ni">ss * Ls[e]], [fun[1].subs</span><span class="nt">({s:sv}) for sv in ss * Ls[e]],&quot;black&quot;)</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">nodes</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="n">factor</span> <span class="o">*</span> <span class="n">U_node</span><span class="p">(</span><span class="n">Usol</span><span class="p">,</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">))])</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span>              <span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">markerfacecolor</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span><span class="n">markeredgecolor</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
-
-<span class="nn">Cell In[34], line 8,</span> in <span class="ni">element_deformed</span><span class="nt">(U_s, e, factor)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span> <span class="nf">element_deformed</span><span class="p">(</span><span class="n">U_s</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">factor</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
-<span class="ne">----&gt; </span><span class="mi">8</span>     <span class="k">return</span> <span class="n">element_initial</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="o">+</span> <span class="n">factor</span> <span class="o">*</span> <span class="n">element_displacement</span><span class="p">(</span><span class="n">U_s</span><span class="p">,</span><span class="n">e</span><span class="p">)</span>
-
-<span class="nn">Cell In[34], line 2,</span> in <span class="ni">element_displacement</span><span class="nt">(U_s, e)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">element_displacement</span><span class="p">(</span><span class="n">U_s</span><span class="p">,</span><span class="n">e</span><span class="p">):</span>
-<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">((</span><span class="n">Matrix</span><span class="p">([</span><span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">])</span> <span class="o">*</span> <span class="n">D</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">alpha</span><span class="p">:</span><span class="n">alphas</span><span class="p">[</span><span class="n">e</span><span class="p">],</span><span class="n">L</span><span class="p">:</span><span class="n">Ls</span><span class="p">[</span><span class="n">e</span><span class="p">]}),</span> <span class="n">U_elem_loc</span><span class="p">(</span><span class="n">U_s</span><span class="p">,</span><span class="n">e</span><span class="p">))</span>
-
-<span class="nn">Cell In[33], line 9,</span> in <span class="ni">U_elem_loc</span><span class="nt">(U, e)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="w"> </span><span class="sd">&quot;&quot;&quot; Returns the element local values in local coordinates&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">T_mat</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">alpha</span><span class="p">:</span><span class="n">alphas</span><span class="p">[</span><span class="n">e</span><span class="p">]})</span>
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="k">return</span>  <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">T_mat</span><span class="p">,</span> <span class="n">U_elem</span><span class="p">(</span><span class="n">U</span><span class="p">,</span><span class="n">e</span><span class="p">))</span>
-
-<span class="nn">Cell In[33], line 3,</span> in <span class="ni">U_elem</span><span class="nt">(U, e)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">U_elem</span><span class="p">(</span><span class="n">U</span><span class="p">,</span><span class="n">e</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="w">     </span><span class="sd">&quot;&quot;&quot; Returns the element local values in global coordinates&quot;&quot;&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">glob_dofs</span> <span class="o">=</span> <span class="n">global_dofs_element</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="k">return</span> <span class="n">U</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">glob_dofs</span><span class="p">)</span>
-
-<span class="nn">Cell In[25], line 6,</span> in <span class="ni">global_dofs_element</span><span class="nt">(element)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">global_dofs_element</span><span class="p">(</span><span class="n">element</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="sd">     Returns the global dof numbers given the element </span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="sd">     (as a pair of node numbers) </span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="n">node_0</span> <span class="o">=</span> <span class="n">element</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> 
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">node_L</span> <span class="o">=</span> <span class="n">element</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> 
-<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="c1"># global dofs number for the element vector</span>
-
-<span class="ne">TypeError</span>: &#39;int&#39; object is not subscriptable
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3, 4, 5]
+[3, 4, 5, 6, 7, 8]
 </pre></div>
 </div>
 <img alt="../../_images/Beam_45_1.png" src="../../_images/Beam_45_1.png" />
@@ -1183,11 +1131,21 @@ In the code below <code class="docutils literal notranslate"><span class="pre">g
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.4142135623731, 1.22975092380269]
+</pre></div>
+</div>
+</div>
 </div>
 <p>The numerical solution is</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">U_node</span><span class="p">(</span><span class="n">Usol</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.41421356, 1.22975092])
 </pre></div>
 </div>
 </div>
