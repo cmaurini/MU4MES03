@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Build your frame &#8212; MU4MES03</title>
+    <title>Coiled beams &#8212; MU4MES03</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,9 +50,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="From beams to frames" href="Beam.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -117,14 +118,14 @@ const thebe_selector_output = ".output, .cell_output"
   Linear beams
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Beam.html">
    From beams to frames
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="build_your_frame.html">
    Build your frame
   </a>
  </li>
@@ -218,7 +219,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/cmaurini/MU4MES03//issues/new?title=Issue%20on%20page%20%2Fchapters/01/build_your_frame.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/cmaurini/MU4MES03//issues/new?title=Issue%20on%20page%20%2Fchapters/01/coiled-beams.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -235,7 +236,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/cmaurini/MU4MES03/edit/master/book/chapters/01/build_your_frame.md"
+        <a href="https://github.com/cmaurini/MU4MES03/edit/master/book/chapters/01/coiled-beams.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -263,7 +264,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/chapters/01/build_your_frame.md"
+        <a href="../../_sources/chapters/01/coiled-beams.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -312,7 +313,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Build your frame</h1>
+                <h1>Coiled beams</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -324,24 +325,15 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="build-your-frame">
-<h1>Build your frame<a class="headerlink" href="#build-your-frame" title="Permalink to this headline">#</a></h1>
-<p>Try now to build your own frame.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="coiled-beams">
+<h1>Coiled beams<a class="headerlink" href="#coiled-beams" title="Permalink to this headline">#</a></h1>
+<p>We will show the next lesson that the equivalent extensional and bending stiffness of the coiled beams composing the Mola models are given by
+$<span class="math notranslate nohighlight">\((EI)_{eq}=\frac{4EIG}{\pi H(2G+E)n}\)</span>$.</p>
+<p>where <span class="math notranslate nohighlight">\(E\)</span> and <span class="math notranslate nohighlight">\(G\)</span> are the Young moduli and the shear stiffness of material composing the coils, <span class="math notranslate nohighlight">\(n\)</span> is the number of coils per unit length, <span class="math notranslate nohighlight">\(I\)</span> is the
+the geometrical quadratic moment of the circular coil cross section, and <span class="math notranslate nohighlight">\(H\)</span> is the overall coil diameter.</p>
 <ol class="simple">
-<li><p>Build you own frame structure with the Mola model.</p></li>
-<li><p>Define the corresponding frame model by modifying the example</p></li>
-<li><p>Choose a load case and perform a qualitative comparison of the structural deformed configuration:</p>
-<ul class="simple">
-<li><p>Take a photo of the deformed configuration of the real structure under the imposed load</p></li>
-<li><p>Compare qualitatively with the deformed configuration plot obtained with your code</p></li>
-</ul>
-</li>
+<li><p>Design and perform with the Mola model’springs a simple experience to validate this formula. Compare the experimental results with the theoretical prediction.</p></li>
 </ol>
-<p>We ask you to submit on moodle at:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://moodle-sciences-22.sorbonne-universite.fr/mod/assign/view.php?id=138567">https://moodle-sciences-22.sorbonne-universite.fr/mod/assign/view.php?id=138567</a>
-a pdf print of the notebook including the points above. Name your file as <strong>DM_frame_groupe_Y.pdf</strong></p></li>
-</ul>
 </section>
 
     <script type="text/x-thebe-config">
@@ -371,13 +363,6 @@ a pdf print of the notebook including the points above. Name your file as <stron
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Beam.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">From beams to frames</p>
-        </div>
-    </a>
 </div>
             </footer>
         </div>
