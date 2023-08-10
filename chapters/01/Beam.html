@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>From beams to frames &#8212; MU4MES03</title>
   
@@ -44,6 +44,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Build your frame" href="build_your_frame.html" />
     <link rel="prev" title="MU4MES03: Slender structures" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -404,7 +405,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="from-beams-to-frames">
-<h1>From beams to frames<a class="headerlink" href="#from-beams-to-frames" title="Permalink to this headline">#</a></h1>
+<h1>From beams to frames<a class="headerlink" href="#from-beams-to-frames" title="Permalink to this heading">#</a></h1>
 <p>This notebook introduces a simple python code for frame modelling.</p>
 <p>Objectives:</p>
 <ul class="simple">
@@ -426,7 +427,7 @@ document.write(`
 </div>
 </div>
 <section id="elemental-beam-problem">
-<h2>Elemental beam problem<a class="headerlink" href="#elemental-beam-problem" title="Permalink to this headline">#</a></h2>
+<h2>Elemental beam problem<a class="headerlink" href="#elemental-beam-problem" title="Permalink to this heading">#</a></h2>
 <p>We start by solving the elemental beam problem. It consists of a clamped-clamped straight beam where we apply the displacement and rotations at the two ends.
 We denote by <span class="math notranslate nohighlight">\(\underline t\)</span> and <span class="math notranslate nohighlight">\(\underline n\)</span> the beam tangent and normal director, <span class="math notranslate nohighlight">\(L\)</span> the beam length, <span class="math notranslate nohighlight">\(EI\)</span> and <span class="math notranslate nohighlight">\(ES\)</span> the bending and extensional stiffness. We assume an unsherable extensible Navier-Bernoulli model and that the beam. We decompose the displacement and rotation as follows:</p>
 <div class="amsmath math notranslate nohighlight">
@@ -469,7 +470,7 @@ u''(s)=0\quad\forall  s\in(0,L),\qquad u(0)=u_0,\qquad u(L)=u_L
 v''''(s)=0\quad\forall  s\in(0,L),\qquad v(0)=v_0,\;v'(0)=\theta_0,\; v(L)=v_L,\; v'(L)=\theta_L
 \end{equation*}\]</div>
 <section id="extension">
-<h3>Extension<a class="headerlink" href="#extension" title="Permalink to this headline">#</a></h3>
+<h3>Extension<a class="headerlink" href="#extension" title="Permalink to this heading">#</a></h3>
 <p>We solve below the extensional problem using <code class="docutils literal notranslate"><span class="pre">sympy</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -488,7 +489,7 @@ v''''(s)=0\quad\forall  s\in(0,L),\qquad v(0)=v_0,\;v'(0)=\theta_0,\; v(L)=v_L,\
 </div>
 </section>
 <section id="bending">
-<h3>Bending<a class="headerlink" href="#bending" title="Permalink to this headline">#</a></h3>
+<h3>Bending<a class="headerlink" href="#bending" title="Permalink to this heading">#</a></h3>
 <p>… and similarly for the bending problem</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -510,7 +511,7 @@ v''''(s)=0\quad\forall  s\in(0,L),\qquad v(0)=v_0,\;v'(0)=\theta_0,\; v(L)=v_L,\
 </section>
 </section>
 <section id="plot-of-the-deformed-shape">
-<h2>Plot of the deformed shape<a class="headerlink" href="#plot-of-the-deformed-shape" title="Permalink to this headline">#</a></h2>
+<h2>Plot of the deformed shape<a class="headerlink" href="#plot-of-the-deformed-shape" title="Permalink to this heading">#</a></h2>
 <p>Let as define the vector <span class="math notranslate nohighlight">\(\underline{U}_e\)</span> is the vector collecting the imposed displacement and rotation</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -541,11 +542,11 @@ You can modify the values to get the different shapes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f45c78573b6d8005abed661d179834f0167c6542bc9da70841ee090d4a224e6d.png" src="../../_images/f45c78573b6d8005abed661d179834f0167c6542bc9da70841ee090d4a224e6d.png" />
+<img alt="../../_images/126a3915999a845b1ade7599265b8007128b8cf7ae144624ac03f4a7a3b000ab.png" src="../../_images/126a3915999a845b1ade7599265b8007128b8cf7ae144624ac03f4a7a3b000ab.png" />
 </div>
 </div>
 <section id="potential-energy-and-elemental-stiffness-matrix">
-<h3>Potential energy and elemental stiffness matrix<a class="headerlink" href="#potential-energy-and-elemental-stiffness-matrix" title="Permalink to this headline">#</a></h3>
+<h3>Potential energy and elemental stiffness matrix<a class="headerlink" href="#potential-energy-and-elemental-stiffness-matrix" title="Permalink to this heading">#</a></h3>
 <p>Hence, we can compute the potential energy of the system in terms of the imposed end-displacement and end-rotation in terms of an elemental stiffness matrix <span class="math notranslate nohighlight">\(\underline{\underline{K}}_e\)</span> as</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -602,7 +603,7 @@ u(s)\\v(s)
 </section>
 </section>
 <section id="global-frame-and-change-of-coordinate">
-<h2>Global frame and change of coordinate<a class="headerlink" href="#global-frame-and-change-of-coordinate" title="Permalink to this headline">#</a></h2>
+<h2>Global frame and change of coordinate<a class="headerlink" href="#global-frame-and-change-of-coordinate" title="Permalink to this heading">#</a></h2>
 <p>Let us known introduce a global frame <span class="math notranslate nohighlight">\((0,\underline{e_1},\underline{e_2})\)</span> and let us call <span class="math notranslate nohighlight">\(\alpha\)</span> the angle giving the orientation of the tangent  and normal vector in this frame. We can then define the coordinates of the displacement vector <span class="math notranslate nohighlight">\(\underline u\)</span> in this new frame</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -657,9 +658,9 @@ Hence, we compute the following orthogonal matrix <span class="math notranslate 
 </div>
 </section>
 <section id="frame-assembling-several-beams">
-<h2>Frame: assembling several beams<a class="headerlink" href="#frame-assembling-several-beams" title="Permalink to this headline">#</a></h2>
+<h2>Frame: assembling several beams<a class="headerlink" href="#frame-assembling-several-beams" title="Permalink to this heading">#</a></h2>
 <section id="define-the-frame">
-<h3>Define the frame<a class="headerlink" href="#define-the-frame" title="Permalink to this headline">#</a></h3>
+<h3>Define the frame<a class="headerlink" href="#define-the-frame" title="Permalink to this heading">#</a></h3>
 <p>The frame is defined by</p>
 <ul class="simple">
 <li><p><em>Geometry</em>: a set of <code class="docutils literal notranslate"><span class="pre">nodes</span></code> connected by <code class="docutils literal notranslate"><span class="pre">elements</span></code>. Each element is a beam.</p></li>
@@ -801,7 +802,7 @@ Global dofs of elements 1: [3, 4, 5, 6, 7, 8]
 </div>
 </section>
 <section id="assembling-the-stiffness-matrix">
-<h3>Assembling the stiffness matrix<a class="headerlink" href="#assembling-the-stiffness-matrix" title="Permalink to this headline">#</a></h3>
+<h3>Assembling the stiffness matrix<a class="headerlink" href="#assembling-the-stiffness-matrix" title="Permalink to this heading">#</a></h3>
 <p>We assemble the global stiffness matrix from the element stiffness matrix <span class="math notranslate nohighlight">\(\underline{\underline{K}}_e\)</span>.
 In the code below <code class="docutils literal notranslate"><span class="pre">global_dofs</span></code> are the global dofs number corresponding to the local displacement vector <span class="math notranslate nohighlight">\(\underline{U}_e\)</span></p>
 <div class="cell docutils container">
@@ -840,7 +841,7 @@ In the code below <code class="docutils literal notranslate"><span class="pre">g
 </div>
 </section>
 <section id="apply-bcs-and-loads">
-<h3>Apply BCs and loads<a class="headerlink" href="#apply-bcs-and-loads" title="Permalink to this headline">#</a></h3>
+<h3>Apply BCs and loads<a class="headerlink" href="#apply-bcs-and-loads" title="Permalink to this heading">#</a></h3>
 <p>To apply the boundary condition we modify the linear system to solve (see the finite element class)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -893,7 +894,7 @@ In the code below <code class="docutils literal notranslate"><span class="pre">g
 </div>
 </section>
 <section id="solve-the-linear-system">
-<h3>Solve the linear system<a class="headerlink" href="#solve-the-linear-system" title="Permalink to this headline">#</a></h3>
+<h3>Solve the linear system<a class="headerlink" href="#solve-the-linear-system" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Usol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">Kbc</span><span class="p">,</span><span class="n">Fbc</span><span class="p">)</span>
@@ -910,7 +911,7 @@ In the code below <code class="docutils literal notranslate"><span class="pre">g
 </div>
 </section>
 <section id="introduce-global-vector-and-mapping-to-local-vectors">
-<h3>Introduce global vector and mapping to local vectors<a class="headerlink" href="#introduce-global-vector-and-mapping-to-local-vectors" title="Permalink to this headline">#</a></h3>
+<h3>Introduce global vector and mapping to local vectors<a class="headerlink" href="#introduce-global-vector-and-mapping-to-local-vectors" title="Permalink to this heading">#</a></h3>
 <p>The following functions are useful to get the displacement <span class="math notranslate nohighlight">\(U_e\)</span> of an element in global and local coordinates.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -944,7 +945,7 @@ In the code below <code class="docutils literal notranslate"><span class="pre">g
 </div>
 </section>
 <section id="visualize-the-results">
-<h3>Visualize the results<a class="headerlink" href="#visualize-the-results" title="Permalink to this headline">#</a></h3>
+<h3>Visualize the results<a class="headerlink" href="#visualize-the-results" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">element_displacement</span><span class="p">(</span><span class="n">U_s</span><span class="p">,</span><span class="n">e</span><span class="p">):</span>
@@ -985,7 +986,7 @@ In the code below <code class="docutils literal notranslate"><span class="pre">g
 </div>
 </section>
 <section id="verification">
-<h3>Verification<a class="headerlink" href="#verification" title="Permalink to this headline">#</a></h3>
+<h3>Verification<a class="headerlink" href="#verification" title="Permalink to this heading">#</a></h3>
 <p>The exact solution for the nodal displacement of the top node is (see <span id="id1">[<a class="reference internal" href="../index.html#id4" title="Patrick Ballard and Alain Millard. Poutres et arcs élastiques. Les éditions de l'Ecole Polytechnique, 2009.">BM09</a>]</span>, page 74)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
