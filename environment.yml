@@ -10,4 +10,4 @@ dependencies:
   - jupyter-book
   - scipy
   - sympy
-  - fenics-dolfinx
+  - fenics-dolfinx==0.6.0
