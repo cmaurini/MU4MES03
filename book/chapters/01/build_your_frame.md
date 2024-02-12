@@ -10,5 +10,6 @@ Try now to build your own frame.
 
 We ask you to submit on moodle at:
 - https://moodle-sciences-22.sorbonne-universite.fr/mod/assign/view.php?id=138567 
-a pdf print of the notebook including the points above. Name your file as **DM_frame_groupe_Y.pdf**
+a pdf print of the notebook including the points above. Name your file as **DM_frame_student_name1-student_name2.pdf**
 
+** The report should include a verification of the code for a simple 2-beam or 3-beam frame against an analytical solution. **
