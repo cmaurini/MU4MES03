@@ -556,7 +556,7 @@ You can modify the values to get the different shapes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/02d63025eb283b9a05fbfec3fcb432df468195af4b72223df3b693b939d70d72.png" src="../../_images/02d63025eb283b9a05fbfec3fcb432df468195af4b72223df3b693b939d70d72.png" />
+<img alt="../../_images/57e1f64d7d810dbe12c3c9c6b3fb9a9ace5ad2f065a315e607523b2be6dc6849.png" src="../../_images/57e1f64d7d810dbe12c3c9c6b3fb9a9ace5ad2f065a315e607523b2be6dc6849.png" />
 </div>
 </div>
 <section id="potential-energy-and-elemental-stiffness-matrix">
@@ -598,7 +598,7 @@ u(s)\\v(s)
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \frac{\frac{4 EI \left(L^{3} \cdot \left(3 L^{2} \theta_{0}^{2} + 6 L^{2} \theta_{0} \theta_{L} + 3 L^{2} \theta_{L}^{2} + 12 L \theta_{0} v_{0} - 12 L \theta_{0} v_{L} + 12 L \theta_{L} v_{0} - 12 L \theta_{L} v_{L} + 12 v_{0}^{2} - 24 v_{0} v_{L} + 12 v_{L}^{2}\right) + L^{2} \left(- 6 L^{3} \theta_{0}^{2} - 9 L^{3} \theta_{0} \theta_{L} - 3 L^{3} \theta_{L}^{2} - 21 L^{2} \theta_{0} v_{0} + 21 L^{2} \theta_{0} v_{L} - 15 L^{2} \theta_{L} v_{0} + 15 L^{2} \theta_{L} v_{L} - 18 L v_{0}^{2} + 36 L v_{0} v_{L} - 18 L v_{L}^{2}\right) + L \left(4 L^{4} \theta_{0}^{2} + 4 L^{4} \theta_{0} \theta_{L} + L^{4} \theta_{L}^{2} + 12 L^{3} \theta_{0} v_{0} - 12 L^{3} \theta_{0} v_{L} + 6 L^{3} \theta_{L} v_{0} - 6 L^{3} \theta_{L} v_{L} + 9 L^{2} v_{0}^{2} - 18 L^{2} v_{0} v_{L} + 9 L^{2} v_{L}^{2}\right)\right)}{L^{4}} + ES L \left(- u_{0} + u_{L}\right)^{2}}{2 L^{2}}\]</div>
+\[\displaystyle \frac{\frac{4 EI \left(L^{3} \left(3 L^{2} \theta_{0}^{2} + 6 L^{2} \theta_{0} \theta_{L} + 3 L^{2} \theta_{L}^{2} + 12 L \theta_{0} v_{0} - 12 L \theta_{0} v_{L} + 12 L \theta_{L} v_{0} - 12 L \theta_{L} v_{L} + 12 v_{0}^{2} - 24 v_{0} v_{L} + 12 v_{L}^{2}\right) + L^{2} \left(- 6 L^{3} \theta_{0}^{2} - 9 L^{3} \theta_{0} \theta_{L} - 3 L^{3} \theta_{L}^{2} - 21 L^{2} \theta_{0} v_{0} + 21 L^{2} \theta_{0} v_{L} - 15 L^{2} \theta_{L} v_{0} + 15 L^{2} \theta_{L} v_{L} - 18 L v_{0}^{2} + 36 L v_{0} v_{L} - 18 L v_{L}^{2}\right) + L \left(4 L^{4} \theta_{0}^{2} + 4 L^{4} \theta_{0} \theta_{L} + L^{4} \theta_{L}^{2} + 12 L^{3} \theta_{0} v_{0} - 12 L^{3} \theta_{0} v_{L} + 6 L^{3} \theta_{L} v_{0} - 6 L^{3} \theta_{L} v_{L} + 9 L^{2} v_{0}^{2} - 18 L^{2} v_{0} v_{L} + 9 L^{2} v_{L}^{2}\right)\right)}{L^{4}} + ES L \left(- u_{0} + u_{L}\right)^{2}}{2 L^{2}}\]</div>
 </div>
 </div>
 <p>And the elemental stiffness matrix is given by</p>
@@ -849,7 +849,7 @@ In the code below <code class="docutils literal notranslate"><span class="pre">g
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\begin{split}\displaystyle \left[\begin{matrix}0.57 &amp; -0.14 &amp; 0.21 &amp; -0.57 &amp; 0.14 &amp; 0.21 &amp; 0 &amp; 0 &amp; 0\\-0.14 &amp; 0.57 &amp; 0.21 &amp; 0.14 &amp; -0.57 &amp; 0.21 &amp; 0 &amp; 0 &amp; 0\\0.21 &amp; 0.21 &amp; 0.28 &amp; -0.21 &amp; -0.21 &amp; 0.14 &amp; 0 &amp; 0 &amp; 0\\-0.57 &amp; 0.14 &amp; -0.21 &amp; 1.13 &amp; 0 &amp; -0.42 &amp; -0.57 &amp; -0.14 &amp; -0.21\\0.14 &amp; -0.57 &amp; -0.21 &amp; 0 &amp; 1.13 &amp; 0 &amp; -0.14 &amp; -0.57 &amp; 0.21\\0.21 &amp; 0.21 &amp; 0.14 &amp; -0.42 &amp; 0 &amp; 0.57 &amp; 0.21 &amp; -0.21 &amp; 0.14\\0 &amp; 0 &amp; 0 &amp; -0.57 &amp; -0.14 &amp; 0.21 &amp; 0.57 &amp; 0.14 &amp; 0.21\\0 &amp; 0 &amp; 0 &amp; -0.14 &amp; -0.57 &amp; -0.21 &amp; 0.14 &amp; 0.57 &amp; -0.21\\0 &amp; 0 &amp; 0 &amp; -0.21 &amp; 0.21 &amp; 0.14 &amp; 0.21 &amp; -0.21 &amp; 0.28\end{matrix}\right]\end{split}\]</div>
+\[\begin{split}\displaystyle \left[\begin{matrix}0.57 &amp; -0.14 &amp; 0.21 &amp; -0.57 &amp; 0.14 &amp; 0.21 &amp; 0.0 &amp; 0.0 &amp; 0.0\\-0.14 &amp; 0.57 &amp; 0.21 &amp; 0.14 &amp; -0.57 &amp; 0.21 &amp; 0.0 &amp; 0.0 &amp; 0.0\\0.21 &amp; 0.21 &amp; 0.28 &amp; -0.21 &amp; -0.21 &amp; 0.14 &amp; 0.0 &amp; 0.0 &amp; 0.0\\-0.57 &amp; 0.14 &amp; -0.21 &amp; 1.13 &amp; 0.0 &amp; -0.42 &amp; -0.57 &amp; -0.14 &amp; -0.21\\0.14 &amp; -0.57 &amp; -0.21 &amp; 0.0 &amp; 1.13 &amp; 0.0 &amp; -0.14 &amp; -0.57 &amp; 0.21\\0.21 &amp; 0.21 &amp; 0.14 &amp; -0.42 &amp; 0.0 &amp; 0.57 &amp; 0.21 &amp; -0.21 &amp; 0.14\\0.0 &amp; 0.0 &amp; 0.0 &amp; -0.57 &amp; -0.14 &amp; 0.21 &amp; 0.57 &amp; 0.14 &amp; 0.21\\0.0 &amp; 0.0 &amp; 0.0 &amp; -0.14 &amp; -0.57 &amp; -0.21 &amp; 0.14 &amp; 0.57 &amp; -0.21\\0.0 &amp; 0.0 &amp; 0.0 &amp; -0.21 &amp; 0.21 &amp; 0.14 &amp; 0.21 &amp; -0.21 &amp; 0.28\end{matrix}\right]\end{split}\]</div>
 <img alt="../../_images/045b79c2c4b72f389780f772e9f775c8c9a6c721c19d814209a19f229aa3d543.png" src="../../_images/045b79c2c4b72f389780f772e9f775c8c9a6c721c19d814209a19f229aa3d543.png" />
 </div>
 </div>
@@ -883,25 +883,25 @@ In the code below <code class="docutils literal notranslate"><span class="pre">g
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Matrix([
- [1.0,   0,     0,     0,     0,     0,   0,   0,     0],
- [  0, 1.0,     0,     0,     0,     0,   0,   0,     0],
- [  0,   0,  0.28, -0.21, -0.21,  0.14,   0,   0,     0],
- [  0,   0, -0.21,  1.13,     0, -0.42,   0,   0, -0.21],
- [  0,   0, -0.21,     0,  1.13,     0,   0,   0,  0.21],
- [  0,   0,  0.14, -0.42,     0,  0.57,   0,   0,  0.14],
- [  0,   0,     0,     0,     0,     0, 1.0,   0,     0],
- [  0,   0,     0,     0,     0,     0,   0, 1.0,     0],
- [  0,   0,     0, -0.21,  0.21,  0.14,   0,   0,  0.28]]),
+ [1.0, 0.0,   0.0,   0.0,   0.0,   0.0, 0.0, 0.0,   0.0],
+ [0.0, 1.0,   0.0,   0.0,   0.0,   0.0, 0.0, 0.0,   0.0],
+ [0.0, 0.0,  0.28, -0.21, -0.21,  0.14, 0.0, 0.0,   0.0],
+ [0.0, 0.0, -0.21,  1.13,   0.0, -0.42, 0.0, 0.0, -0.21],
+ [0.0, 0.0, -0.21,   0.0,  1.13,   0.0, 0.0, 0.0,  0.21],
+ [0.0, 0.0,  0.14, -0.42,   0.0,  0.57, 0.0, 0.0,  0.14],
+ [0.0, 0.0,   0.0,   0.0,   0.0,   0.0, 1.0, 0.0,   0.0],
+ [0.0, 0.0,   0.0,   0.0,   0.0,   0.0, 0.0, 1.0,   0.0],
+ [0.0, 0.0,   0.0, -0.21,  0.21,  0.14, 0.0, 0.0,  0.28]]),
  Matrix([
- [  0],
- [  0],
- [  0],
+ [0.0],
+ [0.0],
+ [0.0],
  [1.0],
  [1.0],
- [  0],
- [  0],
- [  0],
- [  0]]))
+ [0.0],
+ [0.0],
+ [0.0],
+ [0.0]]))
 </pre></div>
 </div>
 </div>
