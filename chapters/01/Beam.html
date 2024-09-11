@@ -470,19 +470,15 @@ We denote by <span class="math notranslate nohighlight">\(\underline t\)</span> 
 </div>
 <p>In the absence of distributed loading the governing equations are as follows (they can by found by imposing the stationarity of the potential energy)</p>
 <ul class="simple">
-<li><p>Extension</p></li>
+<li><p>Extension
+\begin{equation*}
+u’’(s)=0\quad\forall  s\in(0,L),\qquad u(0)=u_0,\qquad u(L)=u_L
+\end{equation*}</p></li>
+<li><p>Bending
+\begin{equation*}
+v’‘’‘(s)=0\quad\forall  s\in(0,L),\qquad v(0)=v_0,;v’(0)=\theta_0,; v(L)=v_L,; v’(L)=\theta_L
+\end{equation*}</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-u''(s)=0\quad\forall  s\in(0,L),\qquad u(0)=u_0,\qquad u(L)=u_L
-\end{equation*}\]</div>
-<ul class="simple">
-<li><p>Bending</p></li>
-</ul>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-v''''(s)=0\quad\forall  s\in(0,L),\qquad v(0)=v_0,\;v'(0)=\theta_0,\; v(L)=v_L,\; v'(L)=\theta_L
-\end{equation*}\]</div>
 <section id="extension">
 <h3>Extension<a class="headerlink" href="#extension" title="Permalink to this heading">#</a></h3>
 <p>We solve below the extensional problem using <code class="docutils literal notranslate"><span class="pre">sympy</span></code></p>
