@@ -439,64 +439,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="p">(</span><span class="n">Function</span><span class="p">,</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">Derivative</span><span class="p">,</span> <span class="n">Eq</span><span class="p">,</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">simplify</span><span class="p">,</span> <span class="n">integrate</span><span class="p">,</span> <span class="n">Matrix</span><span class="p">,</span> <span class="n">Array</span><span class="p">,</span> <span class="n">latex</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>                    <span class="n">dsolve</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">collect</span><span class="p">,</span> <span class="n">tensorcontraction</span><span class="p">,</span><span class="n">tensorproduct</span><span class="p">,</span> <span class="n">derive_by_array</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">sympy</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">mu4mes03</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">129</span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span> <span class="kn">from</span> <span class="nn">packaging.version</span> <span class="kn">import</span> <span class="n">parse</span> <span class="k">as</span> <span class="n">parse_version</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span> <span class="c1"># cbook must import matplotlib only within function</span>
-<span class="g g-Whitespace">    </span><span class="mi">128</span> <span class="c1"># definitions, so it is safe to import from it here.</span>
-<span class="ne">--&gt; </span><span class="mi">129</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_api</span><span class="p">,</span> <span class="n">_version</span><span class="p">,</span> <span class="n">cbook</span><span class="p">,</span> <span class="n">_docstring</span><span class="p">,</span> <span class="n">rcsetup</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span> <span class="kn">from</span> <span class="nn">matplotlib.cbook</span> <span class="kn">import</span> <span class="n">sanitize_sequence</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span> <span class="kn">from</span> <span class="nn">matplotlib._api</span> <span class="kn">import</span> <span class="n">MatplotlibDeprecationWarning</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">mu4mes03</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">rcsetup</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">28</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="kn">from</span> <span class="nn">matplotlib.cbook</span> <span class="kn">import</span> <span class="n">ls_mapper</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">Colormap</span><span class="p">,</span> <span class="n">is_color_like</span>
-<span class="ne">---&gt; </span><span class="mi">28</span> <span class="kn">from</span> <span class="nn">matplotlib._fontconfig_pattern</span> <span class="kn">import</span> <span class="n">parse_fontconfig_pattern</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="kn">from</span> <span class="nn">matplotlib._enums</span> <span class="kn">import</span> <span class="n">JoinStyle</span><span class="p">,</span> <span class="n">CapStyle</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="c1"># Don&#39;t let the original cycler collide with our validating cycler</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">mu4mes03</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">_fontconfig_pattern</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">15</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">lru_cache</span><span class="p">,</span> <span class="n">partial</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="kn">import</span> <span class="nn">re</span>
-<span class="ne">---&gt; </span><span class="mi">15</span> <span class="kn">from</span> <span class="nn">pyparsing</span> <span class="kn">import</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span>     <span class="n">Group</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">ParseException</span><span class="p">,</span> <span class="n">Regex</span><span class="p">,</span> <span class="n">StringEnd</span><span class="p">,</span> <span class="n">Suppress</span><span class="p">,</span> <span class="n">ZeroOrMore</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">_api</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="n">_family_punc</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">\-:,&#39;</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">mu4mes03</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pyparsing</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">129</span>
-<span class="g g-Whitespace">    </span><span class="mi">126</span> <span class="n">__versionTime__</span> <span class="o">=</span> <span class="n">__version_time__</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span> <span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Paul McGuire &lt;ptmcg.gm+pyparsing@gmail.com&gt;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">129</span> <span class="kn">from</span> <span class="nn">.util</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span> <span class="kn">from</span> <span class="nn">.exceptions</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span> <span class="kn">from</span> <span class="nn">.actions</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">mu4mes03</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pyparsing</span><span class="o">/</span><span class="n">util</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">14</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">_bslash</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">92</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">C</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="n">Callable</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">14</span> <span class="k">class</span> <span class="nc">__config_flags</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Internal class for defining compatibility and debugging flags&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="n">_all_names</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/mu4mes03/lib/python3.8/site-packages/pyparsing/util.py:17,</span> in <span class="ni">__config_flags</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="k">class</span> <span class="nc">__config_flags</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Internal class for defining compatibility and debugging flags&quot;&quot;&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">17</span>     <span class="n">_all_names</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="n">_fixed_names</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span>     <span class="n">_type_desc</span> <span class="o">=</span> <span class="s2">&quot;configuration&quot;</span>
-
-<span class="ne">TypeError</span>: &#39;type&#39; object is not subscriptable
-</pre></div>
-</div>
-</div>
 </div>
 <section id="elemental-beam-problem">
 <h2>Elemental beam problem<a class="headerlink" href="#elemental-beam-problem" title="Permalink to this heading">#</a></h2>
@@ -610,7 +552,7 @@ You can modify the values to get the different shapes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/9ee626a4f9179caaef4796cb2f8019dd6af825133ebf415dceff8df3af014c3b.png" src="../../_images/9ee626a4f9179caaef4796cb2f8019dd6af825133ebf415dceff8df3af014c3b.png" />
+<img alt="../../_images/57e1f64d7d810dbe12c3c9c6b3fb9a9ace5ad2f065a315e607523b2be6dc6849.png" src="../../_images/57e1f64d7d810dbe12c3c9c6b3fb9a9ace5ad2f065a315e607523b2be6dc6849.png" />
 </div>
 </div>
 <section id="potential-energy-and-elemental-stiffness-matrix">
@@ -652,7 +594,7 @@ u(s)\\v(s)
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \frac{\frac{4 EI \left(L^{3} \cdot \left(3 L^{2} \theta_{0}^{2} + 6 L^{2} \theta_{0} \theta_{L} + 3 L^{2} \theta_{L}^{2} + 12 L \theta_{0} v_{0} - 12 L \theta_{0} v_{L} + 12 L \theta_{L} v_{0} - 12 L \theta_{L} v_{L} + 12 v_{0}^{2} - 24 v_{0} v_{L} + 12 v_{L}^{2}\right) + L^{2} \left(- 6 L^{3} \theta_{0}^{2} - 9 L^{3} \theta_{0} \theta_{L} - 3 L^{3} \theta_{L}^{2} - 21 L^{2} \theta_{0} v_{0} + 21 L^{2} \theta_{0} v_{L} - 15 L^{2} \theta_{L} v_{0} + 15 L^{2} \theta_{L} v_{L} - 18 L v_{0}^{2} + 36 L v_{0} v_{L} - 18 L v_{L}^{2}\right) + L \left(4 L^{4} \theta_{0}^{2} + 4 L^{4} \theta_{0} \theta_{L} + L^{4} \theta_{L}^{2} + 12 L^{3} \theta_{0} v_{0} - 12 L^{3} \theta_{0} v_{L} + 6 L^{3} \theta_{L} v_{0} - 6 L^{3} \theta_{L} v_{L} + 9 L^{2} v_{0}^{2} - 18 L^{2} v_{0} v_{L} + 9 L^{2} v_{L}^{2}\right)\right)}{L^{4}} + ES L \left(- u_{0} + u_{L}\right)^{2}}{2 L^{2}}\]</div>
+\[\displaystyle \frac{\frac{4 EI \left(L^{3} \left(3 L^{2} \theta_{0}^{2} + 6 L^{2} \theta_{0} \theta_{L} + 3 L^{2} \theta_{L}^{2} + 12 L \theta_{0} v_{0} - 12 L \theta_{0} v_{L} + 12 L \theta_{L} v_{0} - 12 L \theta_{L} v_{L} + 12 v_{0}^{2} - 24 v_{0} v_{L} + 12 v_{L}^{2}\right) + L^{2} \left(- 6 L^{3} \theta_{0}^{2} - 9 L^{3} \theta_{0} \theta_{L} - 3 L^{3} \theta_{L}^{2} - 21 L^{2} \theta_{0} v_{0} + 21 L^{2} \theta_{0} v_{L} - 15 L^{2} \theta_{L} v_{0} + 15 L^{2} \theta_{L} v_{L} - 18 L v_{0}^{2} + 36 L v_{0} v_{L} - 18 L v_{L}^{2}\right) + L \left(4 L^{4} \theta_{0}^{2} + 4 L^{4} \theta_{0} \theta_{L} + L^{4} \theta_{L}^{2} + 12 L^{3} \theta_{0} v_{0} - 12 L^{3} \theta_{0} v_{L} + 6 L^{3} \theta_{L} v_{0} - 6 L^{3} \theta_{L} v_{L} + 9 L^{2} v_{0}^{2} - 18 L^{2} v_{0} v_{L} + 9 L^{2} v_{L}^{2}\right)\right)}{L^{4}} + ES L \left(- u_{0} + u_{L}\right)^{2}}{2 L^{2}}\]</div>
 </div>
 </div>
 <p>And the elemental stiffness matrix is given by</p>
@@ -903,8 +845,8 @@ In the code below <code class="docutils literal notranslate"><span class="pre">g
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\begin{split}\displaystyle \left[\begin{matrix}0.57 &amp; -0.14 &amp; 0.21 &amp; -0.57 &amp; 0.14 &amp; 0.21 &amp; 0 &amp; 0 &amp; 0\\-0.14 &amp; 0.57 &amp; 0.21 &amp; 0.14 &amp; -0.57 &amp; 0.21 &amp; 0 &amp; 0 &amp; 0\\0.21 &amp; 0.21 &amp; 0.28 &amp; -0.21 &amp; -0.21 &amp; 0.14 &amp; 0 &amp; 0 &amp; 0\\-0.57 &amp; 0.14 &amp; -0.21 &amp; 1.13 &amp; 0 &amp; -0.42 &amp; -0.57 &amp; -0.14 &amp; -0.21\\0.14 &amp; -0.57 &amp; -0.21 &amp; 0 &amp; 1.13 &amp; 0 &amp; -0.14 &amp; -0.57 &amp; 0.21\\0.21 &amp; 0.21 &amp; 0.14 &amp; -0.42 &amp; 0 &amp; 0.57 &amp; 0.21 &amp; -0.21 &amp; 0.14\\0 &amp; 0 &amp; 0 &amp; -0.57 &amp; -0.14 &amp; 0.21 &amp; 0.57 &amp; 0.14 &amp; 0.21\\0 &amp; 0 &amp; 0 &amp; -0.14 &amp; -0.57 &amp; -0.21 &amp; 0.14 &amp; 0.57 &amp; -0.21\\0 &amp; 0 &amp; 0 &amp; -0.21 &amp; 0.21 &amp; 0.14 &amp; 0.21 &amp; -0.21 &amp; 0.28\end{matrix}\right]\end{split}\]</div>
-<img alt="../../_images/038ce9714f053e7f06b0b0036b76269c39634d0e123d210e7437758deb73638d.png" src="../../_images/038ce9714f053e7f06b0b0036b76269c39634d0e123d210e7437758deb73638d.png" />
+\[\begin{split}\displaystyle \left[\begin{matrix}0.57 &amp; -0.14 &amp; 0.21 &amp; -0.57 &amp; 0.14 &amp; 0.21 &amp; 0.0 &amp; 0.0 &amp; 0.0\\-0.14 &amp; 0.57 &amp; 0.21 &amp; 0.14 &amp; -0.57 &amp; 0.21 &amp; 0.0 &amp; 0.0 &amp; 0.0\\0.21 &amp; 0.21 &amp; 0.28 &amp; -0.21 &amp; -0.21 &amp; 0.14 &amp; 0.0 &amp; 0.0 &amp; 0.0\\-0.57 &amp; 0.14 &amp; -0.21 &amp; 1.13 &amp; 0.0 &amp; -0.42 &amp; -0.57 &amp; -0.14 &amp; -0.21\\0.14 &amp; -0.57 &amp; -0.21 &amp; 0.0 &amp; 1.13 &amp; 0.0 &amp; -0.14 &amp; -0.57 &amp; 0.21\\0.21 &amp; 0.21 &amp; 0.14 &amp; -0.42 &amp; 0.0 &amp; 0.57 &amp; 0.21 &amp; -0.21 &amp; 0.14\\0.0 &amp; 0.0 &amp; 0.0 &amp; -0.57 &amp; -0.14 &amp; 0.21 &amp; 0.57 &amp; 0.14 &amp; 0.21\\0.0 &amp; 0.0 &amp; 0.0 &amp; -0.14 &amp; -0.57 &amp; -0.21 &amp; 0.14 &amp; 0.57 &amp; -0.21\\0.0 &amp; 0.0 &amp; 0.0 &amp; -0.21 &amp; 0.21 &amp; 0.14 &amp; 0.21 &amp; -0.21 &amp; 0.28\end{matrix}\right]\end{split}\]</div>
+<img alt="../../_images/045b79c2c4b72f389780f772e9f775c8c9a6c721c19d814209a19f229aa3d543.png" src="../../_images/045b79c2c4b72f389780f772e9f775c8c9a6c721c19d814209a19f229aa3d543.png" />
 </div>
 </div>
 </section>
@@ -937,25 +879,25 @@ In the code below <code class="docutils literal notranslate"><span class="pre">g
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Matrix([
- [1.0,   0,     0,     0,     0,     0,   0,   0,     0],
- [  0, 1.0,     0,     0,     0,     0,   0,   0,     0],
- [  0,   0,  0.28, -0.21, -0.21,  0.14,   0,   0,     0],
- [  0,   0, -0.21,  1.13,     0, -0.42,   0,   0, -0.21],
- [  0,   0, -0.21,     0,  1.13,     0,   0,   0,  0.21],
- [  0,   0,  0.14, -0.42,     0,  0.57,   0,   0,  0.14],
- [  0,   0,     0,     0,     0,     0, 1.0,   0,     0],
- [  0,   0,     0,     0,     0,     0,   0, 1.0,     0],
- [  0,   0,     0, -0.21,  0.21,  0.14,   0,   0,  0.28]]),
+ [1.0, 0.0,   0.0,   0.0,   0.0,   0.0, 0.0, 0.0,   0.0],
+ [0.0, 1.0,   0.0,   0.0,   0.0,   0.0, 0.0, 0.0,   0.0],
+ [0.0, 0.0,  0.28, -0.21, -0.21,  0.14, 0.0, 0.0,   0.0],
+ [0.0, 0.0, -0.21,  1.13,   0.0, -0.42, 0.0, 0.0, -0.21],
+ [0.0, 0.0, -0.21,   0.0,  1.13,   0.0, 0.0, 0.0,  0.21],
+ [0.0, 0.0,  0.14, -0.42,   0.0,  0.57, 0.0, 0.0,  0.14],
+ [0.0, 0.0,   0.0,   0.0,   0.0,   0.0, 1.0, 0.0,   0.0],
+ [0.0, 0.0,   0.0,   0.0,   0.0,   0.0, 0.0, 1.0,   0.0],
+ [0.0, 0.0,   0.0, -0.21,  0.21,  0.14, 0.0, 0.0,  0.28]]),
  Matrix([
- [  0],
- [  0],
- [  0],
+ [0.0],
+ [0.0],
+ [0.0],
  [1.0],
  [1.0],
- [  0],
- [  0],
- [  0],
- [  0]]))
+ [0.0],
+ [0.0],
+ [0.0],
+ [0.0]]))
 </pre></div>
 </div>
 </div>
@@ -1003,7 +945,7 @@ In the code below <code class="docutils literal notranslate"><span class="pre">g
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3, 4, 5]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 4, 5, 6, 7, 8]
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0., 0., 0., 0., 0., 0.])
@@ -1049,7 +991,7 @@ In the code below <code class="docutils literal notranslate"><span class="pre">g
 [3, 4, 5, 6, 7, 8]
 </pre></div>
 </div>
-<img alt="../../_images/5b861ce0dae8f8a6d5559282a00c3b2d661a172db3868712b78181e695617e1b.png" src="../../_images/5b861ce0dae8f8a6d5559282a00c3b2d661a172db3868712b78181e695617e1b.png" />
+<img alt="../../_images/0682f6c511ad54eb221e86bb9231bd57ae561e1db3fcda5e2faa1774bc920316.png" src="../../_images/0682f6c511ad54eb221e86bb9231bd57ae561e1db3fcda5e2faa1774bc920316.png" />
 </div>
 </div>
 </section>
