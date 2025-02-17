@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Build your frame &#8212; MU4MES03</title>
+    <title>Exercice &#8212; MU4MES03</title>
   
   
   
@@ -62,10 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/01/build_your_frame';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Coiled beams" href="coiled_beams.html" />
     <link rel="prev" title="From beams to frames" href="Beam.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -171,8 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Linear beams</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Beam.html">From beams to frames</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Build your frame</a></li>
-<li class="toctree-l1"><a class="reference internal" href="coiled_beams.html">Coiled beams</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercice</a></li>
 </ul>
 
     </div>
@@ -362,7 +362,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -373,11 +375,28 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Build your frame</h1>
+    <h1>Exercice</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#td-3-and-homework-2-frame-modeling">TD 3 and Homework 2: Frame modeling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-mola-beam-td2-exercice-2">I. Mola beam (TD2 Exercice 2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-frame-structure">II. Frame structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#elementary-tasks">Elementary tasks</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quantitative-verification-of-the-numerical-model">Quantitative Verification of the numerical model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qualitative-validation-of-the-model">Qualitative validation of the model</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -387,25 +406,69 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="build-your-frame">
-<h1>Build your frame<a class="headerlink" href="#build-your-frame" title="Permalink to this heading">#</a></h1>
-<p>Try now to build your own frame.</p>
-<ol class="arabic simple">
-<li><p>Build you own frame structure with the Mola model.</p></li>
-<li><p>Define the corresponding frame model by modifying the example</p></li>
-<li><p>Choose a load case and perform a qualitative comparison of the structural deformed configuration:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercice">
+<h1>Exercice<a class="headerlink" href="#exercice" title="Permalink to this heading">#</a></h1>
+<section id="td-3-and-homework-2-frame-modeling">
+<h2>TD 3 and Homework 2: Frame modeling<a class="headerlink" href="#td-3-and-homework-2-frame-modeling" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Take a photo of the deformed configuration of the real structure under the imposed load</p></li>
-<li><p>Compare qualitatively with the deformed configuration plot obtained with your code</p></li>
+<li><p>Work in group of 4 students</p></li>
+<li><p>Only one report for the group must be submitted. The report will be composed of two documents</p>
+<ol class="arabic simple">
+<li><p>A detailed report with the calculations</p></li>
+<li><p>A presentation of the work done with</p>
+<ul>
+<li><p>One or two slides with the analytical solution with the result for the displacement of the node D, idea of the method of solution and diagram for the bending moment in the bars.</p></li>
+<li><p>One slide with the numerical solution.</p></li>
+<li><p>One slide with the experiment.</p></li>
+<li><p>One slide of comparisons/conclusions.
+Name the file as <code class="docutils literal notranslate"><span class="pre">DM_frame_report_nom1_nom2_nom3_nom4.pdf</span></code> and <code class="docutils literal notranslate"><span class="pre">DM_frame_presentation_nom1_nom2_nom3_nom4.pdf</span></code></p></li>
 </ul>
 </li>
 </ol>
-<p>We ask you to submit on moodle at:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://moodle-sciences-23.sorbonne-universite.fr/mod/assign/view.php?id=127628">https://moodle-sciences-23.sorbonne-universite.fr/mod/assign/view.php?id=127628</a>
-a pdf print of the notebook including the points above. Name your file as <strong>DM_frame_student_name1-student_name2.pdf</strong></p></li>
+</li>
+<li><p>Submit on moodle at <a class="reference external" href="https://moodle-sciences-24.sorbonne-universite.fr/mod/assign/view.php?id=163171">https://moodle-sciences-24.sorbonne-universite.fr/mod/assign/view.php?id=163171</a></p></li>
+<li><p>Specify at the end of the file the contribution of each member of the group (e.g. student 1 worked on the analytical part, student 2 and 3 worked on the code, student 4 on  the experiments, etc.). Obviously, all the members of the group are responsible for the work of the group.</p></li>
+<li><p>You will do a 5 minutes presentation of the work done in class on March 3rd.</p></li>
 </ul>
-<p><strong>The report should include a verification of the code for a simple 2-beam or 3-beam frame against an analytical solution.</strong></p>
+<section id="i-mola-beam-td2-exercice-2">
+<h3>I. Mola beam (TD2 Exercice 2)<a class="headerlink" href="#i-mola-beam-td2-exercice-2" title="Permalink to this heading">#</a></h3>
+<p>Resume your results on the Exercice 2 of TD2 on the comparison between the analytical solution and the experimental finding for the cantilever <code class="docutils literal notranslate"><span class="pre">Mola</span></code> beam. You should give the following results and comment</p>
+<ul class="simple">
+<li><p>The value of the equivalent bending stiffness <span class="math notranslate nohighlight">\((EI)_\mathrm{equiv}\)</span> of the beam.</p></li>
+<li><p>The analytical solution for the displacement of the tip of the beam.</p></li>
+<li><p>The experimental value of the displacement of the tip of the beam.</p></li>
+</ul>
+</section>
+<section id="ii-frame-structure">
+<h3>II. Frame structure<a class="headerlink" href="#ii-frame-structure" title="Permalink to this heading">#</a></h3>
+<p>We consider the frame in Figure.</p>
+<figure class="align-default" id="frame-structure">
+<a class="reference internal image-reference" href="../../_images/frame.png"><img alt="../../_images/frame.png" src="../../_images/frame.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Frame structure under load</span><a class="headerlink" href="#frame-structure" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="elementary-tasks">
+<h4>Elementary tasks<a class="headerlink" href="#elementary-tasks" title="Permalink to this heading">#</a></h4>
+<p>We split the work in the following four tasks, that can be performed in parallel by the group members:</p>
+<ol class="arabic simple">
+<li><p>Reproduce the structure with the Mola model and take a picture the deformation of the structure under the imposed load.</p></li>
+<li><p>Define the corresponding frame model by modifying the example in the notebook.</p></li>
+<li><p>Solve the problem analytically using the method of the minimum of the complementary potential energy and compute the displacement of the node <span class="math notranslate nohighlight">\(D\)</span>. Plot the diagram of the normal force, shear force and bending moments in the bars.</p></li>
+</ol>
+</section>
+<section id="quantitative-verification-of-the-numerical-model">
+<h4>Quantitative Verification of the numerical model<a class="headerlink" href="#quantitative-verification-of-the-numerical-model" title="Permalink to this heading">#</a></h4>
+<p>Compare the results of the analytical solution with the numerical solution obtained with the code and comment.</p>
+</section>
+<section id="qualitative-validation-of-the-model">
+<h4>Qualitative validation of the model<a class="headerlink" href="#qualitative-validation-of-the-model" title="Permalink to this heading">#</a></h4>
+<p>Perform a qualitative comparison of the deformed configuration:
+- Take a photo of the deformed configuration of the real structure under the imposed load
+- Compare qualitatively with the deformed configuration plot obtained with your code</p>
+</section>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -447,21 +510,35 @@ a pdf print of the notebook including the points above. Name your file as <stron
         <p class="prev-next-title">From beams to frames</p>
       </div>
     </a>
-    <a class="right-next"
-       href="coiled_beams.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Coiled beams</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#td-3-and-homework-2-frame-modeling">TD 3 and Homework 2: Frame modeling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-mola-beam-td2-exercice-2">I. Mola beam (TD2 Exercice 2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-frame-structure">II. Frame structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#elementary-tasks">Elementary tasks</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quantitative-verification-of-the-numerical-model">Quantitative Verification of the numerical model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qualitative-validation-of-the-model">Qualitative validation of the model</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
