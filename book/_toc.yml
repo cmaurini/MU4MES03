@@ -8,4 +8,4 @@ parts:
     chapters:
     - file: chapters/01/Beam.ipynb
     - file: chapters/01/build_your_frame.md
-    - file: chapters/01/coiled_beams.md
+#    - file: chapters/01/coiled_beams.md
