@@ -2,9 +2,6 @@
 
 This book is a supplementary material to the class *MU4MES04: Structures élancées* at Sorbonne University.
 
-Further material is available on moodle page of the class:
-- https://moodle-sciences-22.sorbonne-universite.fr/course/view.php?id=4401
-
 ## Running the notebooks
 
 To run the notebooks on your computer you need to have a working installation of numpy, scipy, and other basic python tools. 
