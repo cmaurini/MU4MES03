@@ -18,9 +18,9 @@
 ### I. Mola beam (TD2 Exercice 2)
 
 Resume your results on the Exercice 2 of TD2 on the comparison between the analytical solution and the experimental finding for the cantilever `Mola` beam. You should give the following results and comment
-- The value of the equivalent bending stiffness $(EI)_\mathrm{equiv}$ of the beam
-- The analytical solution for the displacement of the tip of the beam
-- The experimental value of the displacement of the tip of the beam
+- The value of the equivalent bending stiffness $(EI)_\mathrm{equiv}$ of the beam.
+- The analytical solution for the displacement of the tip of the beam.
+- The experimental value of the displacement of the tip of the beam.
 
 ### II. Frame structure
 
