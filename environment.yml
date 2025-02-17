@@ -2,7 +2,7 @@ name: mu4mes03
 channels:
   - conda-forge
 dependencies:
-  - python=3.8
+  - python
   - sphinx
   - pip
   - pandas
