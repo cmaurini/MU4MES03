@@ -7,7 +7,4 @@ jupyterlab
 numpy
 scipy
 sympy
-
 seaborn
-scipy
-sympy
