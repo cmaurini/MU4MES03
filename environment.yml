@@ -10,4 +10,5 @@ dependencies:
   - jupyter-book
   - scipy
   - sympy
-  - fenics-dolfinx
+  - jupyterlab
+
