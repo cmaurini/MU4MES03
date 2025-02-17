@@ -451,7 +451,7 @@ We denote by <span class="math notranslate nohighlight">\(\underline t\)</span> 
 <p>We introduce below the notation and the expression of the potential energy using <code class="docutils literal notranslate"><span class="pre">sympy</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;s L&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;s L&quot;</span><span class="p">)</span> 
 <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s2">&quot;u&quot;</span><span class="p">),</span> <span class="n">Function</span><span class="p">(</span><span class="s2">&quot;v&quot;</span><span class="p">)</span>
 <span class="n">EI</span><span class="p">,</span> <span class="n">EA</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;EI , ES&quot;</span><span class="p">)</span>
 <span class="n">bending_energy</span> <span class="o">=</span> <span class="n">EI</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="n">integrate</span><span class="p">(</span><span class="n">v</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">))</span>
@@ -470,13 +470,13 @@ We denote by <span class="math notranslate nohighlight">\(\underline t\)</span> 
 <p>In the absence of distributed loading the governing equations are as follows (they can by found by imposing the stationarity of the potential energy)</p>
 <ul class="simple">
 <li><p>Extension
-\begin{equation*}
-u’’(s)=0\quad\forall  s\in(0,L),\qquad u(0)=u_0,\qquad u(L)=u_L
-\end{equation*}</p></li>
+$<span class="math notranslate nohighlight">\(
+u''(s)=0\quad\forall  s\in(0,L),\qquad u(0)=u_0,\qquad u(L)=u_L
+\)</span>$</p></li>
 <li><p>Bending
-\begin{equation*}
-v’‘’‘(s)=0\quad\forall  s\in(0,L),\qquad v(0)=v_0,;v’(0)=\theta_0,; v(L)=v_L,; v’(L)=\theta_L
-\end{equation*}</p></li>
+$<span class="math notranslate nohighlight">\(
+v''''(s)=0\quad\forall  s\in(0,L),\qquad v(0)=v_0,\;v'(0)=\theta_0,\; v(L)=v_L,\; v'(L)=\theta_L
+\)</span>$</p></li>
 </ul>
 <section id="extension">
 <h3>Extension<a class="headerlink" href="#extension" title="Permalink to this heading">#</a></h3>
@@ -556,11 +556,10 @@ You can modify the values to get the different shapes.</p>
 </div>
 <section id="potential-energy-and-elemental-stiffness-matrix">
 <h3>Potential energy and elemental stiffness matrix<a class="headerlink" href="#potential-energy-and-elemental-stiffness-matrix" title="Permalink to this heading">#</a></h3>
-<p>Hence, we can compute the potential energy of the system in terms of the imposed end-displacement and end-rotation in terms of an elemental stiffness matrix <span class="math notranslate nohighlight">\(\underline{\underline{K}}_e\)</span> as</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
+<p>Hence, we can compute the potential energy of the system in terms of the imposed end-displacement and end-rotation in terms of an elemental stiffness matrix <span class="math notranslate nohighlight">\(\underline{\underline{K}}_e\)</span> as
+$<span class="math notranslate nohighlight">\(
 E_p(\underline U_e)=\dfrac{1}{2}(\underline{\underline K}_e.\underline{U}_e).\underline{U}_e
-\end{equation*}\]</div>
+\)</span>$</p>
 <p>The solution can be written in the form</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
