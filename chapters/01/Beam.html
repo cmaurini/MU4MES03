@@ -630,25 +630,24 @@ u(s)\\v(s)
 </div>
 <p>We define <span class="math notranslate nohighlight">\(\underline{U}^*_{e}\)</span> the vector giving the component of the end-displacement
 <span class="math notranslate nohighlight">\(\underline{U}_e\)</span> in the global frame.
-Hence, we compute the following orthogonal matrix <span class="math notranslate nohighlight">\(T\)</span> such that</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
+Hence, we compute the following orthogonal matrix <span class="math notranslate nohighlight">\(T\)</span> such that
+$<span class="math notranslate nohighlight">\(
 \underline{U}^*_e = T.\underline{U}_e,\qquad
 \underline{U}_e = T^t.\underline{U}^*_e
-\end{equation*}\]</div>
+\)</span>$</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u0_s</span> <span class="o">=</span> <span class="n">u0</span> <span class="o">*</span> <span class="n">t</span> <span class="o">+</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">n</span>
 <span class="n">uL_s</span> <span class="o">=</span> <span class="n">uL</span> <span class="o">*</span> <span class="n">t</span> <span class="o">+</span> <span class="n">vL</span> <span class="o">*</span> <span class="n">n</span>
 <span class="n">Ue_s</span> <span class="o">=</span> <span class="n">Array</span><span class="p">((</span><span class="n">u0_s</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">u0_s</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">theta0</span><span class="p">,</span><span class="n">uL_s</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">uL_s</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">thetaL</span><span class="p">))</span>
-<span class="n">T</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="n">Ue_s</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Ui</span><span class="p">)</span> <span class="k">for</span> <span class="n">Ui</span> <span class="ow">in</span> <span class="n">Ue</span><span class="p">])</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="n">Ue_s</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Ui</span><span class="p">)</span> <span class="k">for</span> <span class="n">Ui</span> <span class="ow">in</span> <span class="n">Ue</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
 <span class="n">T</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\begin{split}\displaystyle \left[\begin{matrix}\cos{\left(\alpha \right)} &amp; \sin{\left(\alpha \right)} &amp; 0 &amp; 0 &amp; 0 &amp; 0\\- \sin{\left(\alpha \right)} &amp; \cos{\left(\alpha \right)} &amp; 0 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 0 &amp; \cos{\left(\alpha \right)} &amp; \sin{\left(\alpha \right)} &amp; 0\\0 &amp; 0 &amp; 0 &amp; - \sin{\left(\alpha \right)} &amp; \cos{\left(\alpha \right)} &amp; 0\\0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1\end{matrix}\right]\end{split}\]</div>
+\[\begin{split}\displaystyle \left[\begin{matrix}\cos{\left(\alpha \right)} &amp; - \sin{\left(\alpha \right)} &amp; 0 &amp; 0 &amp; 0 &amp; 0\\\sin{\left(\alpha \right)} &amp; \cos{\left(\alpha \right)} &amp; 0 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 0 &amp; \cos{\left(\alpha \right)} &amp; - \sin{\left(\alpha \right)} &amp; 0\\0 &amp; 0 &amp; 0 &amp; \sin{\left(\alpha \right)} &amp; \cos{\left(\alpha \right)} &amp; 0\\0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <p>The local stiffness matrix in the new coordinate is defined by</p>
@@ -661,7 +660,7 @@ Hence, we compute the following orthogonal matrix <span class="math notranslate 
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\begin{split}\displaystyle \left[\begin{matrix}\frac{12 EI \sin^{2}{\left(\alpha \right)}}{L^{3}} + \frac{ES \cos^{2}{\left(\alpha \right)}}{L} &amp; \frac{12 EI \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L^{3}} - \frac{ES \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L} &amp; \frac{6 EI \sin{\left(\alpha \right)}}{L^{2}} &amp; - \frac{12 EI \sin^{2}{\left(\alpha \right)}}{L^{3}} - \frac{ES \cos^{2}{\left(\alpha \right)}}{L} &amp; - \frac{12 EI \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L^{3}} + \frac{ES \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L} &amp; \frac{6 EI \sin{\left(\alpha \right)}}{L^{2}}\\\frac{12 EI \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L^{3}} - \frac{ES \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L} &amp; \frac{12 EI \cos^{2}{\left(\alpha \right)}}{L^{3}} + \frac{ES \sin^{2}{\left(\alpha \right)}}{L} &amp; \frac{6 EI \cos{\left(\alpha \right)}}{L^{2}} &amp; - \frac{12 EI \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L^{3}} + \frac{ES \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L} &amp; - \frac{12 EI \cos^{2}{\left(\alpha \right)}}{L^{3}} - \frac{ES \sin^{2}{\left(\alpha \right)}}{L} &amp; \frac{6 EI \cos{\left(\alpha \right)}}{L^{2}}\\\frac{6 EI \sin{\left(\alpha \right)}}{L^{2}} &amp; \frac{6 EI \cos{\left(\alpha \right)}}{L^{2}} &amp; \frac{4 EI}{L} &amp; - \frac{6 EI \sin{\left(\alpha \right)}}{L^{2}} &amp; - \frac{6 EI \cos{\left(\alpha \right)}}{L^{2}} &amp; \frac{2 EI}{L}\\- \frac{12 EI \sin^{2}{\left(\alpha \right)}}{L^{3}} - \frac{ES \cos^{2}{\left(\alpha \right)}}{L} &amp; - \frac{12 EI \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L^{3}} + \frac{ES \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L} &amp; - \frac{6 EI \sin{\left(\alpha \right)}}{L^{2}} &amp; \frac{12 EI \sin^{2}{\left(\alpha \right)}}{L^{3}} + \frac{ES \cos^{2}{\left(\alpha \right)}}{L} &amp; \frac{12 EI \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L^{3}} - \frac{ES \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L} &amp; - \frac{6 EI \sin{\left(\alpha \right)}}{L^{2}}\\- \frac{12 EI \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L^{3}} + \frac{ES \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L} &amp; - \frac{12 EI \cos^{2}{\left(\alpha \right)}}{L^{3}} - \frac{ES \sin^{2}{\left(\alpha \right)}}{L} &amp; - \frac{6 EI \cos{\left(\alpha \right)}}{L^{2}} &amp; \frac{12 EI \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L^{3}} - \frac{ES \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L} &amp; \frac{12 EI \cos^{2}{\left(\alpha \right)}}{L^{3}} + \frac{ES \sin^{2}{\left(\alpha \right)}}{L} &amp; - \frac{6 EI \cos{\left(\alpha \right)}}{L^{2}}\\\frac{6 EI \sin{\left(\alpha \right)}}{L^{2}} &amp; \frac{6 EI \cos{\left(\alpha \right)}}{L^{2}} &amp; \frac{2 EI}{L} &amp; - \frac{6 EI \sin{\left(\alpha \right)}}{L^{2}} &amp; - \frac{6 EI \cos{\left(\alpha \right)}}{L^{2}} &amp; \frac{4 EI}{L}\end{matrix}\right]\end{split}\]</div>
+\[\begin{split}\displaystyle \left[\begin{matrix}\frac{12 EI \sin^{2}{\left(\alpha \right)}}{L^{3}} + \frac{ES \cos^{2}{\left(\alpha \right)}}{L} &amp; - \frac{12 EI \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L^{3}} + \frac{ES \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L} &amp; - \frac{6 EI \sin{\left(\alpha \right)}}{L^{2}} &amp; - \frac{12 EI \sin^{2}{\left(\alpha \right)}}{L^{3}} - \frac{ES \cos^{2}{\left(\alpha \right)}}{L} &amp; \frac{12 EI \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L^{3}} - \frac{ES \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L} &amp; - \frac{6 EI \sin{\left(\alpha \right)}}{L^{2}}\\- \frac{12 EI \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L^{3}} + \frac{ES \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L} &amp; \frac{12 EI \cos^{2}{\left(\alpha \right)}}{L^{3}} + \frac{ES \sin^{2}{\left(\alpha \right)}}{L} &amp; \frac{6 EI \cos{\left(\alpha \right)}}{L^{2}} &amp; \frac{12 EI \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L^{3}} - \frac{ES \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L} &amp; - \frac{12 EI \cos^{2}{\left(\alpha \right)}}{L^{3}} - \frac{ES \sin^{2}{\left(\alpha \right)}}{L} &amp; \frac{6 EI \cos{\left(\alpha \right)}}{L^{2}}\\- \frac{6 EI \sin{\left(\alpha \right)}}{L^{2}} &amp; \frac{6 EI \cos{\left(\alpha \right)}}{L^{2}} &amp; \frac{4 EI}{L} &amp; \frac{6 EI \sin{\left(\alpha \right)}}{L^{2}} &amp; - \frac{6 EI \cos{\left(\alpha \right)}}{L^{2}} &amp; \frac{2 EI}{L}\\- \frac{12 EI \sin^{2}{\left(\alpha \right)}}{L^{3}} - \frac{ES \cos^{2}{\left(\alpha \right)}}{L} &amp; \frac{12 EI \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L^{3}} - \frac{ES \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L} &amp; \frac{6 EI \sin{\left(\alpha \right)}}{L^{2}} &amp; \frac{12 EI \sin^{2}{\left(\alpha \right)}}{L^{3}} + \frac{ES \cos^{2}{\left(\alpha \right)}}{L} &amp; - \frac{12 EI \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L^{3}} + \frac{ES \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L} &amp; \frac{6 EI \sin{\left(\alpha \right)}}{L^{2}}\\\frac{12 EI \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L^{3}} - \frac{ES \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L} &amp; - \frac{12 EI \cos^{2}{\left(\alpha \right)}}{L^{3}} - \frac{ES \sin^{2}{\left(\alpha \right)}}{L} &amp; - \frac{6 EI \cos{\left(\alpha \right)}}{L^{2}} &amp; - \frac{12 EI \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L^{3}} + \frac{ES \sin{\left(\alpha \right)} \cos{\left(\alpha \right)}}{L} &amp; \frac{12 EI \cos^{2}{\left(\alpha \right)}}{L^{3}} + \frac{ES \sin^{2}{\left(\alpha \right)}}{L} &amp; - \frac{6 EI \cos{\left(\alpha \right)}}{L^{2}}\\- \frac{6 EI \sin{\left(\alpha \right)}}{L^{2}} &amp; \frac{6 EI \cos{\left(\alpha \right)}}{L^{2}} &amp; \frac{2 EI}{L} &amp; \frac{6 EI \sin{\left(\alpha \right)}}{L^{2}} &amp; - \frac{6 EI \cos{\left(\alpha \right)}}{L^{2}} &amp; \frac{4 EI}{L}\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 </section>
@@ -843,8 +842,8 @@ In the code below <code class="docutils literal notranslate"><span class="pre">g
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\begin{split}\displaystyle \left[\begin{matrix}0.57 &amp; -0.14 &amp; 0.21 &amp; -0.57 &amp; 0.14 &amp; 0.21 &amp; 0.0 &amp; 0.0 &amp; 0.0\\-0.14 &amp; 0.57 &amp; 0.21 &amp; 0.14 &amp; -0.57 &amp; 0.21 &amp; 0.0 &amp; 0.0 &amp; 0.0\\0.21 &amp; 0.21 &amp; 0.28 &amp; -0.21 &amp; -0.21 &amp; 0.14 &amp; 0.0 &amp; 0.0 &amp; 0.0\\-0.57 &amp; 0.14 &amp; -0.21 &amp; 1.13 &amp; 0.0 &amp; -0.42 &amp; -0.57 &amp; -0.14 &amp; -0.21\\0.14 &amp; -0.57 &amp; -0.21 &amp; 0.0 &amp; 1.13 &amp; 0.0 &amp; -0.14 &amp; -0.57 &amp; 0.21\\0.21 &amp; 0.21 &amp; 0.14 &amp; -0.42 &amp; 0.0 &amp; 0.57 &amp; 0.21 &amp; -0.21 &amp; 0.14\\0.0 &amp; 0.0 &amp; 0.0 &amp; -0.57 &amp; -0.14 &amp; 0.21 &amp; 0.57 &amp; 0.14 &amp; 0.21\\0.0 &amp; 0.0 &amp; 0.0 &amp; -0.14 &amp; -0.57 &amp; -0.21 &amp; 0.14 &amp; 0.57 &amp; -0.21\\0.0 &amp; 0.0 &amp; 0.0 &amp; -0.21 &amp; 0.21 &amp; 0.14 &amp; 0.21 &amp; -0.21 &amp; 0.28\end{matrix}\right]\end{split}\]</div>
-<img alt="../../_images/045b79c2c4b72f389780f772e9f775c8c9a6c721c19d814209a19f229aa3d543.png" src="../../_images/045b79c2c4b72f389780f772e9f775c8c9a6c721c19d814209a19f229aa3d543.png" />
+\[\begin{split}\displaystyle \left[\begin{matrix}0.57 &amp; 0.14 &amp; -0.21 &amp; -0.57 &amp; -0.14 &amp; -0.21 &amp; 0.0 &amp; 0.0 &amp; 0.0\\0.14 &amp; 0.57 &amp; 0.21 &amp; -0.14 &amp; -0.57 &amp; 0.21 &amp; 0.0 &amp; 0.0 &amp; 0.0\\-0.21 &amp; 0.21 &amp; 0.28 &amp; 0.21 &amp; -0.21 &amp; 0.14 &amp; 0.0 &amp; 0.0 &amp; 0.0\\-0.57 &amp; -0.14 &amp; 0.21 &amp; 1.13 &amp; 0.0 &amp; 0.42 &amp; -0.57 &amp; 0.14 &amp; 0.21\\-0.14 &amp; -0.57 &amp; -0.21 &amp; 0.0 &amp; 1.13 &amp; 0.0 &amp; 0.14 &amp; -0.57 &amp; 0.21\\-0.21 &amp; 0.21 &amp; 0.14 &amp; 0.42 &amp; 0.0 &amp; 0.57 &amp; -0.21 &amp; -0.21 &amp; 0.14\\0.0 &amp; 0.0 &amp; 0.0 &amp; -0.57 &amp; 0.14 &amp; -0.21 &amp; 0.57 &amp; -0.14 &amp; -0.21\\0.0 &amp; 0.0 &amp; 0.0 &amp; 0.14 &amp; -0.57 &amp; -0.21 &amp; -0.14 &amp; 0.57 &amp; -0.21\\0.0 &amp; 0.0 &amp; 0.0 &amp; 0.21 &amp; 0.21 &amp; 0.14 &amp; -0.21 &amp; -0.21 &amp; 0.28\end{matrix}\right]\end{split}\]</div>
+<img alt="../../_images/faaf60488ee71d79bd70a480fc0764847c8ba0cf68a7aca065dcc6b024637874.png" src="../../_images/faaf60488ee71d79bd70a480fc0764847c8ba0cf68a7aca065dcc6b024637874.png" />
 </div>
 </div>
 </section>
@@ -877,15 +876,15 @@ In the code below <code class="docutils literal notranslate"><span class="pre">g
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Matrix([
- [1.0, 0.0,   0.0,   0.0,   0.0,   0.0, 0.0, 0.0,   0.0],
- [0.0, 1.0,   0.0,   0.0,   0.0,   0.0, 0.0, 0.0,   0.0],
- [0.0, 0.0,  0.28, -0.21, -0.21,  0.14, 0.0, 0.0,   0.0],
- [0.0, 0.0, -0.21,  1.13,   0.0, -0.42, 0.0, 0.0, -0.21],
- [0.0, 0.0, -0.21,   0.0,  1.13,   0.0, 0.0, 0.0,  0.21],
- [0.0, 0.0,  0.14, -0.42,   0.0,  0.57, 0.0, 0.0,  0.14],
- [0.0, 0.0,   0.0,   0.0,   0.0,   0.0, 1.0, 0.0,   0.0],
- [0.0, 0.0,   0.0,   0.0,   0.0,   0.0, 0.0, 1.0,   0.0],
- [0.0, 0.0,   0.0, -0.21,  0.21,  0.14, 0.0, 0.0,  0.28]]),
+ [1.0, 0.0,   0.0,  0.0,   0.0,  0.0, 0.0, 0.0,  0.0],
+ [0.0, 1.0,   0.0,  0.0,   0.0,  0.0, 0.0, 0.0,  0.0],
+ [0.0, 0.0,  0.28, 0.21, -0.21, 0.14, 0.0, 0.0,  0.0],
+ [0.0, 0.0,  0.21, 1.13,   0.0, 0.42, 0.0, 0.0, 0.21],
+ [0.0, 0.0, -0.21,  0.0,  1.13,  0.0, 0.0, 0.0, 0.21],
+ [0.0, 0.0,  0.14, 0.42,   0.0, 0.57, 0.0, 0.0, 0.14],
+ [0.0, 0.0,   0.0,  0.0,   0.0,  0.0, 1.0, 0.0,  0.0],
+ [0.0, 0.0,   0.0,  0.0,   0.0,  0.0, 0.0, 1.0,  0.0],
+ [0.0, 0.0,   0.0, 0.21,  0.21, 0.14, 0.0, 0.0, 0.28]]),
  Matrix([
  [0.0],
  [0.0],
@@ -911,8 +910,8 @@ In the code below <code class="docutils literal notranslate"><span class="pre">g
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.        ,  0.        ,  1.62941997,  1.41421356,  1.22975092,
-        0.70710678,  0.        ,  0.        , -0.21520641])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.        ,  0.        ,  0.21520641,  1.41421356,  1.22975092,
+       -0.70710678,  0.        ,  0.        , -1.62941997])
 </pre></div>
 </div>
 </div>
@@ -957,7 +956,8 @@ In the code below <code class="docutils literal notranslate"><span class="pre">g
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">element_displacement</span><span class="p">(</span><span class="n">U_s</span><span class="p">,</span><span class="n">e</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">((</span><span class="n">Matrix</span><span class="p">([</span><span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">])</span> <span class="o">*</span> <span class="n">D</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">alpha</span><span class="p">:</span><span class="n">alphas</span><span class="p">[</span><span class="n">e</span><span class="p">],</span><span class="n">L</span><span class="p">:</span><span class="n">Ls</span><span class="p">[</span><span class="n">e</span><span class="p">]}),</span> <span class="n">U_elem_loc</span><span class="p">(</span><span class="n">U_s</span><span class="p">,</span><span class="n">e</span><span class="p">))</span>
+    <span class="n">T_mat</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Matrix</span><span class="p">(</span><span class="n">T_mat</span> <span class="o">*</span> <span class="n">D</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">alpha</span><span class="p">:</span><span class="n">alphas</span><span class="p">[</span><span class="n">e</span><span class="p">],</span><span class="n">L</span><span class="p">:</span><span class="n">Ls</span><span class="p">[</span><span class="n">e</span><span class="p">]}),</span> <span class="n">U_elem_loc</span><span class="p">(</span><span class="n">U_s</span><span class="p">,</span><span class="n">e</span><span class="p">))</span>
 
 <span class="k">def</span> <span class="nf">element_initial</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">nodes</span><span class="p">[</span><span class="n">elements</span><span class="p">[</span><span class="n">e</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span> <span class="o">+</span> <span class="n">s</span> <span class="o">*</span> <span class="n">t</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">alpha</span><span class="p">:</span><span class="n">alphas</span><span class="p">[</span><span class="n">e</span><span class="p">]})</span>
@@ -989,7 +989,7 @@ In the code below <code class="docutils literal notranslate"><span class="pre">g
 [3, 4, 5, 6, 7, 8]
 </pre></div>
 </div>
-<img alt="../../_images/0682f6c511ad54eb221e86bb9231bd57ae561e1db3fcda5e2faa1774bc920316.png" src="../../_images/0682f6c511ad54eb221e86bb9231bd57ae561e1db3fcda5e2faa1774bc920316.png" />
+<img alt="../../_images/9aff81008fe61c2a59cdd7f2bf699ade71cf7f6ce602107d3b6c066f37615830.png" src="../../_images/9aff81008fe61c2a59cdd7f2bf699ade71cf7f6ce602107d3b6c066f37615830.png" />
 </div>
 </div>
 </section>
